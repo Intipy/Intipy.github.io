@@ -20,7 +20,6 @@ title                    : "AI Pages"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Intipy"
-avatar                   : "/assets/PicsArt_08-01-09.00.26.jpg"
 description              : "Approximate Life"
 url                      : "https://Intipy.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -104,7 +103,8 @@ analytics:
 author:
   name             : "Intipy"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Approximate Life"
+  bio              : "Approximate Life
+  avatar           : "/assets/PicsArt_08-01-09.00.26.jpg"
   location         : "Namyangju, Republic of Korea"
   # email            : "jios6790@gmail.com"
   links:
