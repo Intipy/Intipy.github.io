@@ -107,9 +107,9 @@ author:
   location         : "Namyangju, Republic of Korea"
   email            : "jios6790@gmail.com"
   links:
-    - label: "Email"
+    - label: "jios6790@gmail.com"
       icon: "fas fa-fw fa-envelope-square"
-      url: "jios6790@gmail.com"
+      # url: "jios6790@gmail.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
