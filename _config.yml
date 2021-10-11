@@ -20,6 +20,7 @@ title                    : "AI Pages"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Intipy"
+avatar                   : "/assets/PicsArt_08-01-09.00.26.jpg"
 description              : "Approximate Life"
 url                      : "https://Intipy.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
