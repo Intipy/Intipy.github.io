@@ -147,6 +147,9 @@ footer:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url:
+    - label: "jios6790@gmail.com"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:jios6790@gmail.com"
 
 
 # Reading Files
