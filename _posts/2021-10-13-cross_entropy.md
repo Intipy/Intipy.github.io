@@ -131,7 +131,7 @@ $H_q(p) = -(0.2\log_e0.3 + 0.2\log_e0.3 + 0.6\log_e0.4)=1.031...$
 
 KL 발산은 두 분포의 차이를 측정하는 것인데, 교차 엔트로피에서 엔트로피를 빼준 것이다.
 
-$D_{KL}(q||p)  = -/sum^{n}_{i=1} \log_e p(x_i) {\log_e q(x_i) - \log_e p(x_i) = H_q(p)- H(p)$
+$D_{KL}(q||p)  = -\sum^{n}_{i=1} \log_e p(x_i) {\log_e q(x_i) - \log_e p(x_i) = H_q(p)- H(p)$
 
 
 
