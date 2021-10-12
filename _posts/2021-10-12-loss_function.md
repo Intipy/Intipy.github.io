@@ -27,7 +27,7 @@ last_modified_at: 2021-10-12T08:06:00-05:00
 
 평균 제곱 오차 다음과 같이 정의한다.
 
-<img src="https://render.githubusercontent.com/render/math?math=Error = \frac{1}{N} \sum^{N}_{i=1} (y_i - t_i)^2">
+$Error = \frac{1}{N} \sum^{N}_{i=1} (y_i - t_i)^2$
 
 먼저 y와 t의 차이를 제곱한다.
 
@@ -45,7 +45,7 @@ N개를 더한 후 N으로 나눠줌으로서 평균을 구하는 것을 알 수
 
 교차 엔트로피 오차는 다음과 같다
 
-<img src="https://render.githubusercontent.com/render/math?math=Error = - \sum^{N}_{i=1} t_i log_e y_i">
+$Error = - \sum^{N}_{i=1} t_i log_e y_i$
 
 크로스 엔트로피 오차 또한 손실을 계산하는 수많은 손실함수 중 하나이다.
 
