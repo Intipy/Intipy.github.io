@@ -132,12 +132,12 @@ $H_q(p) = -(0.2\log_e0.3 + 0.2\log_e0.3 + 0.6\log_e0.4)=1.031...$
 
 KL 발산은 두 분포의 차이를 측정하는 것인데, 교차 엔트로피에서 엔트로피를 빼준 것이다.
 
-$$D_{KL}(p||q) = -\sum^{n}_{i=1}p(x_i)[\log_e q(x_i) - \log_e p(x_i)]= H_q(p) - H(p)$$
+$$D_{KL}(p||q) = -\sum^{n}_{i=1}p(x_i) \Biggl(\log_e q(x_i) - \log_e p(x_i) \Biggr)= H_q(p) - H(p)$$
 
 
+$H_q(p) \geq H(p)$ 이므로 $H_q(p) - H(p) \geq 0$
 
-
-m
+$D_{KL}(p||q)$의 값은 최소 0이며, 예측 분포가 정답에 가까워질수록 0으로 수렴한다.
 
 
 
