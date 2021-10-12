@@ -117,7 +117,7 @@ x는 양의 방향(우측)으로 이동하여 극소점에 가까워진다.
 
 
 
-$x \colon= x - \alpha \frac{df(x)}{dx}$
+$x \; \colon= x - \alpha \frac{df(x)}{dx}$
 
 
 
