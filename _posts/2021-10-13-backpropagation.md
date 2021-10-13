@@ -23,9 +23,9 @@ $y = f(g(x)$ 와 같은 합성함수가 있을 때, 그 도함수가 다음과 �
 
 $y = f(u), \; u = g(x)$ 라고 하면
 
-$\frac{dy}{dx} = \frac{dy}{du} /cdot \frac{du}{dx}$
+$\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx}$
 
-$\frac{f(g(x))}{x} = \frac{df(g(x))}{dg(x)} /cdot \frac{dg(x)}{dx}$
+$\frac{f(g(x))}{x} = \frac{df(g(x))}{dg(x)} \cdot \frac{dg(x)}{dx}$
 
 $\{ f(g(x)) \}' = f'(g(x)) \cdot f(g'(x)) $
 
