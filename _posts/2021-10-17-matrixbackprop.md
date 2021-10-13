@@ -90,7 +90,7 @@ T는 정답을 행렬로 나타낸 것이며, 오차 또한 행렬로 표현된�
 
 오차 행렬에 대해 가중치와 편향 행렬에 대한 미분을 구하면 아래로 표현된다.
 
-$\frac{\partial Error}{\partial W_2} = \frac{\partial A_2}{\partial W_2} \cdot \{ \frac{\partial Error}{\partial Z_2}  \cdot \frac{\partial Z_2}{\partial A_2} \}$
+$\frac{\partial Error}{\partial W_2} = \frac{\partial A_2}{\partial W_2} \cdot \Big( \frac{\partial Error}{\partial Z_2}  \cdot \frac{\partial Z_2}{\partial A_2} \Big)$
 
 $\frac{\partial Error}{\partial B_2} = \frac{\partial Error}{\partial Z_2}  \cdot \frac{\partial Z_2}{\partial A_2} \cdot \frac{\partial A_2}{\partial B_2}$
 
@@ -138,7 +138,7 @@ $\frac{\partial A_2}{\partial B_2} = \frac{\partial Z_1 \cdot W_2 + B_2}{\partia
 
 이제 각 층에 대해서 미분이 끝났으므로 손실에 대한 가중치와 편향의 기울기를 구할 수 있다.
 
-$\frac{\partial Error}{\partial W_2} = \frac{\partial A_2}{\partial W_2} \cdot \{ \frac{\partial Error}{\partial Z_2}  \cdot \frac{\partial Z_2}{\partial A_2} \}=Z_1^T \{(Z_2 - T)Z_2(1-Z_2)\}$
+$\frac{\partial Error}{\partial W_2} = \frac{\partial A_2}{\partial W_2} \cdot \Big( \frac{\partial Error}{\partial Z_2}  \cdot \frac{\partial Z_2}{\partial A_2} \Big)=Z_1^T \Big( (Z_2 - T)Z_2(1-Z_2)\Big)$
 
 $\frac{\partial Error}{\partial B_2} = \frac{\partial Error}{\partial Z_2}  \cdot \frac{\partial Z_2}{\partial A_2} \cdot \frac{\partial A_2}{\partial B_2} = (Z_2 - T)Z_2(1-Z_2)$
 
