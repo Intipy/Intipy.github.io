@@ -155,6 +155,14 @@ $\frac{\partial Error}{\partial b} = \frac{\partial Error}{\partial y} \cdot \fr
 
 위 식처럼 기울기를 구할 수 있다.
 
+나중에 또 자세히 다룰 것이지만 미리 말하자면 
+
+$\frac{\partial y}{\partial a}= \frac{\partial \sigma(a)}{\partial a} = \sigma(a)(1-\sigma(a)) = y(1-y)$
+
+위처럼 시그모이드 함수를 미분할 수 있다.
+
+미분 과정은 나중에 자세히 다룰 때 같이 설명하도록 하겠다.
+
 <br/>
 
 기울기를 구했으면 이제 옵티마이저를 통해 업데이트 해주기만 하면 된다.
@@ -186,6 +194,12 @@ $b \; \colon= b - \alpha \frac{\partial Error}{\partial b}$
 입력은 이전 층의 출력과 연결되어 있으므로 입력에 대해 미분을 해야지 이전 층으로 역전파가 가능하다. (이전 층 입장에서 다음 층의 입력은 자신의 출력에서 나왔기 때문이다. 말했듯이 역전파는 출력에서부터 시작한다.)
 
 그렇기에 우리는 $\frac{\partial Error}{\partial x}$를 구해주어야 한다.
+
+$\frac{\partial a}{\partial x} = \frac{\partial xw + b}{\partial x} = w$
+
+따라서
+
+$\frac{\partial Error}{\partial x} = \frac{\partial Error}{\partial y} \cdot \frac{\partial y}{\partial a} \cdot \frac{\partial a}{\partial x} = (y-t)\sigma'(a)w$
 
 이렇게 입력에 대해 미분을 했다면 이전 층으로 역전파가 된다. 
 
