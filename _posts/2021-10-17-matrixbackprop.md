@@ -160,6 +160,18 @@ $\frac{\partial Error}{\partial B_2} = \frac{\partial Error}{\partial Z_2}  \cdo
 
 $\frac{\partial Error}{\partial Z_1} = \frac{\partial Error}{\partial Z_2} \cdot \frac{\partial Z_2}{\partial A_2} \cdot \frac{\partial A_2}{\partial Z_1} = (Z_2 - T)Z_2(1-Z_2)W_2^T$
 
+가중합에 대한 입력의 미분을 자세히 보자면 아래와 같다.
+
+$\frac{\partial A_2}{\partial Z_1} = \frac{\partial Z_1 \cdot W_2 + B_2}{\partial Z_1} = W_2^T$
+
+이것도 마찬가지로 전치행렬로 나온다. 
+
+이 경우에는 역전파된 기울기에 $Z_1^T$처럼 앞에 곱할 필요 없이, 다른 층과 똑같이 뒤에 곱해준다.
+
+
+
+
+
 
 
 
