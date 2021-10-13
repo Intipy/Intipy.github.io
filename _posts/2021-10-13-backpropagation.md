@@ -23,6 +23,8 @@ last_modified_at: 2021-10-12T08:06:00-05:00
 
 $y = f(g(x)$ 와 같은 합성함수가 있을 때, 그 도함수가 다음과 같이 구해진다는 것이다.
 
+<br/>
+
 $y = f(u), \; u = g(x)$ 라고 하면
 
 $\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx}$
@@ -30,6 +32,8 @@ $\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx}$
 $\frac{df(g(x))}{dx} = \frac{df(g(x))}{dg(x)} \cdot \frac{dg(x)}{dx}$
 
 $\{ f(g(x)) \}' = f'(g(x)) \cdot f(g'(x)) $
+
+<br/>
 
 g에 대한 미분과 f에 대한 미분을 합성했다고 볼 수도 있지만 다르게 말하면 f•g의 미분을 f와 g의 미분으로 분해한 것이다.
 
@@ -42,6 +46,8 @@ g에 대한 미분과 f에 대한 미분을 합성했다고 볼 수도 있지만
 이를 위해서는 각 층들을 모두 미분할 수 있어야 하는데, 우리는 아직 모든 층을 배우지 않았다.
 
 그렇게 때문에 활성화함수라는 것을 짚고 넘어가겠다.
+
+<br/>
  
  $a = xw + b$ 이렇게 가중치와 곱해져 출력이 나왔다고 하자.
  
@@ -73,17 +79,23 @@ x가 클수록 1로 수렴하며, 작을수록 0으로 수렴한다.
 
 활성화함수에 대한 대략적 설명이 끝났으니 이제 오차 역전파에 대해 제대로 알아보도록 하겠다.
 
+<br/>
+
 ![](/assets/image/1-1perceptron.png)
 
 다음과 같은 아주 간단한, 1개의 퍼셉트론으로 이루어진 신경망을 생각해보자.
 
 이 신경망을 아래처럼 수식으로 나타낼 수 있다.
 
+<br/>
+
 $a = xw + b $
 
 $y = \sigma (a)$
 
 $Error = \frac{1}{2} (y - t)^2$
+
+<br/>
 
 손실함수는 평균 제곱 오차를 사용했으며 y는 신경망의 출력, t는 실제 정답이다.
 
@@ -97,6 +109,8 @@ $\frac{\partial Error}{\partial b}$
 
 저 2개를 알아내면 옵티마이저를 통해 가중치를 업데이트할 수 있다.
 
+<br/>
+
 우선 신경망이라는 복잡한 함수를 미분하기 위해 이것을 분해하겠다.
 
 각 층을 미분하기 위해 층마다 분해하면 다음처럼 된다.
@@ -105,23 +119,33 @@ $\frac{\partial Error}{\partial w} = \frac{\partial Error}{\partial y} \cdot \fr
 
 $\frac{\partial Error}{\partial b} = \frac{\partial Error}{\partial y} \cdot \frac{\partial y}{\partial a} \cdot \frac{\partial a}{\partial b}$
 
+<br/>
+
 연쇄법칙에 근거해서 뒤에서부터 구해보겠다. (여기서 뒤라는 것은 신경망의 연산 순서의 반대)
 
 $\frac{\partial Error}{\partial y} = \frac{\partial \frac{1}{2} (y-t)^2}{\partial y} = y - t$
 
 위 식처럼 손실을 출력에 대해 편미분하면 $y-t$이다.
 
+<br/>
+
 $\frac{\partial y}{\partial a} = \frac{\partial \sigma(a)}{\partial a} = \sigma'(a)$
 
 그리고 출력 y를 a에 대해 편미분하면 활성화함수의 도함수가 나온다.
+
+<br/>
 
 $\frac{\partial a}{\partial w} = \frac{\partial xw + b}{\partial w} = x$
 
 a에 대하여 가중치 w로 편미분하면 x가 된다.
 
+<br/>
+
 $\frac{\partial a}{\partial b} = \frac{\partial xw + b}{\partial b} = 1$
 
 a에 대하여 편향 b로 편미분하면 1이 된다.
+
+<br/>
 
 이제 연쇄법칙을 이용해 $\frac{\partial Error}{\partial w}$ 와 $\frac{\partial Error}{\partial b}$를 분해하면
 
@@ -131,6 +155,8 @@ $\frac{\partial Error}{\partial b} = \frac{\partial Error}{\partial y} \cdot \fr
 
 위 식처럼 기울기를 구할 수 있다.
 
+<br/>
+
 기울기를 구했으면 이제 옵티마이저를 통해 업데이트 해주기만 하면 된다.
 
 가장 간단한 SGD를 사용하여 업데이트를 하면 아래와 같다.
@@ -138,6 +164,8 @@ $\frac{\partial Error}{\partial b} = \frac{\partial Error}{\partial y} \cdot \fr
 $w \; \colon= w - \alpha \frac{\partial Error}{\partial w}$
 
 $b \; \colon= b - \alpha \frac{\partial Error}{\partial b}$
+
+<br/>
 
 신경망의 층이 이게 전부라면 여기서 끝내도 된다.
 
