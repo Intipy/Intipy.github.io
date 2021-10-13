@@ -84,13 +84,13 @@ $Z_2: 1 \times 5$
 
 정답 5개와 출력 5개에 대하여, 마찬가지로 손실함수를 이용해 오차를 구한다.
 
-$Error = \frax{1}{2} (Z_2 - T)^2$
+$Error = \frac{1}{2} (Z_2 - T)^2$
 
 T는 정답을 행렬로 나타낸 것이며, 오차 또한 행렬로 표현된다.
 
 오차 행렬에 대해 가중치와 편향 행렬에 대한 미분을 구하면 아래로 표현된다.
 
-$\frac{\partial Error}{\partial W_2} = \frac{\partial A_2}{\partial W_2} \cdot \{\frac{\partial Error}{\partial Z_2}  \cdot \frac{\partial Z_2}{\partial A_2} \}$
+$\frac{\partial Error}{\partial W_2} = \frac{\partial A_2}{\partial W_2} \cdot \{ \frac{\partial Error}{\partial Z_2}  \cdot \frac{\partial Z_2}{\partial A_2} \}$
 
 $\frac{\partial Error}{\partial B_2} = \frac{\partial Error}{\partial Z_2}  \cdot \frac{\partial Z_2}{\partial A_2} \cdot \frac{\partial A_2}{\partial B_2}$
 
@@ -100,7 +100,7 @@ $\frac{\partial A_2}{\partial W_2}$가 앞으로 온 것이 눈에 띄는데, �
 
 <br/>
 
-$\frac{\partial Error}{\partial Z_2} = \frac{\partial \frax{1}{2} (Z_2 - T)^2}{\partial Z_2} = Z_2 - T$
+$\frac{\partial Error}{\partial Z_2} = \frac{\partial \frac{1}{2} (Z_2 - T)^2}{\partial Z_2} = Z_2 - T$
 
 위 식은 오차에 대해 출력을 미분한 값이다.
 
