@@ -1,4 +1,3 @@
-
 ---
 title:  "퍼셉트론(Perceptron)"
 
