@@ -25,6 +25,10 @@ $y = f(u), \; u = g(x)$ 라고 하면
 
 $\frac{dy}{dx} = \frac{dy}{du} /cdot \frac{du}{dx}$
 
+$\frac{f(g(x))}{x} = \frac{df(g(x))}{dg(x)} /cdot \frac{dg(x)}{dx}$
+
+$$
+
 
 
 
