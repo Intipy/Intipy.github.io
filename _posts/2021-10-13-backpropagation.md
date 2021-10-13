@@ -97,7 +97,7 @@ $\frac{\partial Error}{\partial b}$
 
 우선 신경망이라는 복잡한 함수를 미분하기 위해 이것을 분해하겠다.
 
-각 층마다 분해하여 미분하기 위해 층마다 분해하면 다음처럼 된다.
+각 층을 미분하기 위해 층마다 분해하면 다음처럼 된다.
 
 $\frac{\partial Error}{\partial w} = \frac{\partial Error}{\partial y} \cdot \frac{\partial y}{\partial a} \cdot \frac{\partial a}{\partial w}$
 
