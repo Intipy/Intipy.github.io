@@ -107,9 +107,28 @@ $\frac{\partial y}{\partial a} = \frac{\partial \sigma(a)}{\partial a} = \sigma'
 
 $\frac{\partial a}{\partial w} = \frac{\partial xw + b}{\partial w} = x$
 
-a에 대하려 가중치 w로 편미분하면 x가 된다.
+a에 대하여 가중치 w로 편미분하면 x가 된다.
 
 $\frac{\partial a}{\partial b} = \frac{\partial xw + b}{\partial b} = 1$
+
+a에 대하여 편향 b로 편미분하면 1이 된다.
+
+이제 연쇄법칙을 이용해 $\frac{\partial Error}{\partial w}$ 와 $\frac{\partial Error}{\partial b}$를 분해하면
+
+$\frac{\partial Error}{\partial w} = \frac{\partial Error}{\partial y} \cdot \frac{\partial y}{\partial a} \cdot \frac{\partial a}{\partial w} = (y-t)\sigma'(a)x$
+
+$\frac{\partial Error}{\partial b} = \frac{\partial Error}{\partial y} \cdot \frac{\partial y}{\partial a} \cdot \frac{\partial a}{\partial b} = (y-t)\sigma'(a)$
+
+위 식처럼 기울기를 구할 수 있다.
+
+기울기를 구했으면 이제 옵티마이저를 통해 업데이트 해주기만 하면 된다.
+
+가장 간단한 SGD를 사용하여 업데이트를 하면 아래와 같다.
+
+$w \; \colon= w - \alpha \frac{\partial Error}{\partial w}$
+
+$b \; \colon= b - \alpha \frac{\partial Error}{\partial b}$
+
  
 
 
