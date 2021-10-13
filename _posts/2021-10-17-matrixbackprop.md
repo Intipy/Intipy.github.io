@@ -90,10 +90,11 @@ T는 정답을 행렬로 나타낸 것이며, 오차 또한 행렬로 표현된�
 
 오차 행렬에 대해 가중치와 편향 행렬에 대한 미분을 구하면 아래로 표현된다.
 
-$\frac{\partial Error}{\partial W_2} = \frac{\partial Error}{\partial Z_2}  \cdot \frac{\partial Z_2}{\partial A_2} \cdot \frac{\partial A_2}{\partial W_2}$
+$\frac{\partial Error}{\partial W_2} = \frac{\partial A_2}{\partial W_2} \cdot \{\frac{\partial Error}{\partial Z_2}  \cdot \frac{\partial Z_2}{\partial A_2} \}$
 
 $\frac{\partial Error}{\partial B_2} = \frac{\partial Error}{\partial Z_2}  \cdot \frac{\partial Z_2}{\partial A_2} \cdot \frac{\partial A_2}{\partial B_2}$
 
+$\frac{\partial A_2}{\partial W_2}$가 앞으로 온 것이 눈에 띄는데, 이것은 밑에서 설명한다.
 
 이렇게 각 계층에 대한 편미분으로 분해했으니 층마다 편미분을 해보겠다.
 
@@ -117,13 +118,13 @@ $\frac{\partial A_2}{\partial W_2} = \frac{\partial Z_1 \cdot W_2 + B_2}{\partia
 
 여기서 $Z_1^T$는 행렬 $Z_1$의 전치행렬(Transposed Matrix)을 나타낸다.
 
-어떤 실수값을 가지는 변수에 대해 미분했다면 전치행렬같은 개념 없이 미분이 쉽게 된다.
+어떤 스칼라값을 가지는 변수에 대해 미분했다면 전치행렬같은 개념 없이 미분이 쉽게 된다.
 
 예를 들어 위 식에서 Z와 W가 행렬이 아니었다면, $\frac{\partial a_2}{\partial w_2} = \frac{\partial z_1 \cdot w_2 + b_2}{\partial w_2} = z_1$
 
 이렇게 $z_1$로 미분이 되지만 행렬일 경우에 $Z_1^T$로 미분이 된다.
 
-미분한 값이 어째서 전치행렬이 되는가에 대한 답은 *자코비안 미분*에 있다.
+미분한 값이 어째서 전치행렬이 되는가에 대한 답은 자코비안 미분에 있다.
 
 자코비안 미분에 대한 자세한 것은 나중에 설명할 것이고, 지금은 전치행렬이 나온다는 것만 알도록 하자.
 
@@ -137,15 +138,17 @@ $\frac{\partial A_2}{\partial B_2} = \frac{\partial Z_1 \cdot W_2 + B_2}{\partia
 
 이제 각 층에 대해서 미분이 끝났으므로 손실에 대한 가중치와 편향의 기울기를 구할 수 있다.
 
-$\frac{\partial Error}{\partial W_2} = \frac{\partial Error}{\partial Z_2}  \cdot \frac{\partial Z_2}{\partial A_2} \cdot \frac{\partial A_2}{\partial W_2}=Z_1^T(Z_2 - T)Z_2(1-Z_2)$
+$\frac{\partial Error}{\partial W_2} = \frac{\partial A_2}{\partial W_2} \cdot \{ \frac{\partial Error}{\partial Z_2}  \cdot \frac{\partial Z_2}{\partial A_2} \}=Z_1^T \{(Z_2 - T)Z_2(1-Z_2)\}$
 
 $\frac{\partial Error}{\partial B_2} = \frac{\partial Error}{\partial Z_2}  \cdot \frac{\partial Z_2}{\partial A_2} \cdot \frac{\partial A_2}{\partial B_2} = (Z_2 - T)Z_2(1-Z_2)$
 
-이전에 했던 것과 달리 행렬의 곱이므로 순서가 매우 중요하다.
+이전에 했던 스칼라 연산과 달리 행렬의 곱이므로 순서가 매우 중요한데,
 
 자코비안 미분을 했을 때 $Z_1^T$은 앞에서 곱해져야 한다.
 
 즉, $Z_1^T \cdot [다음 층에서 역전파된 기울기]$ 와 같은 순서를 유지해야 한다.
+
+다른 층의 경우에 $[다음 층에서 역전파된 기울기] \cdot [현재 층 미분]$ 이렇게 역전파가 되는 것과 순서가 정반대이다. 
 
 <br/>
 
