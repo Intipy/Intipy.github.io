@@ -85,7 +85,7 @@ $Error = \frac{1}{2} (y - t)^2$
 
 손실함수는 평균 제곱 오차를 사용했으며 y는 신경망의 출력, t는 실제 정답이다.
 
-우리가 구해야 하는 것은 가중치에 대한 기울기와 편향에 대한 기울기,
+우리가 구해야 하는 것은 가중치에 대한 기울기와 편향에 대한 기울기는
 
 $\frac{\partial Error}{\partial w}$ 
 
@@ -99,11 +99,17 @@ $\frac{\partial Error}{\partial b}$
 
 $\frac{\partial Error}{\partial y} = \frac{\partial \frac{1}{2} (y-t)^2}{\partial y} = y - t$
 
-위 식처럼 손실을 출력에 대해 미분하면 $y-t$이다.
+위 식처럼 손실을 출력에 대해 편미분하면 $y-t$이다.
 
+$\frac{\partial y}{\partial a} = \frac{\partial \sigma(a)}{\partial a} = \sigma'(a)$
 
+그리고 출력 y를 a에 대해 편미분하면 활성화함수의 도함수가 나온다.
 
+$\frac{\partial a}{\partial w} = \frac{\partial xw + b}{\partial w} = x$
 
+a에 대하려 가중치 w로 편미분하면 x가 된다.
+
+$\frac{\partial a}{\partial b} = \frac{\partial xw + b}{\partial b} = 1$
  
 
 
