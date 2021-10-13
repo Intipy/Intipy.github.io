@@ -83,6 +83,26 @@ $y = \sigma (a)$
 
 $Error = \frac{1}{2} (y - t)^2$
 
+손실함수는 평균 제곱 오차를 사용했으며 y는 신경망의 출력, t는 실제 정답이다.
+
+우리가 구해야 하는 것은 가중치에 대한 기울기와 편향에 대한 기울기,
+
+$\frac{\partial Error}{\partial w}$ 
+
+$\frac{\partial Error}{\partial b}$
+
+위 2개이다.
+
+저 2개를 알아내면 옵티마이저를 통해 가중치를 업데이트할 수 있다.
+
+연쇄법칙에 근거해서 뒤에서부터 구해보겠다.
+
+$\frac{\partial Error}{\partial y} = \frac{\partial \frac{1}{2} (y-t)^2}{\partial y} = y - t$
+
+위 식처럼 손실을 출력에 대해 미분하면 $y-t$이다.
+
+
+
 
  
 
