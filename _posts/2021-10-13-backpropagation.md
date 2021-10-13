@@ -95,7 +95,15 @@ $\frac{\partial Error}{\partial b}$
 
 저 2개를 알아내면 옵티마이저를 통해 가중치를 업데이트할 수 있다.
 
-연쇄법칙에 근거해서 뒤에서부터 구해보겠다.
+우선 신경망이라는 복잡한 함수를 미분하기 위해 이것을 분해하겠다.
+
+각 층마다 분해하여 미분하기 위해 층마다 분해하면 다음처럼 된다.
+
+$\frac{\partial Error}{\partial w} = \frac{\partial Error}{\partial y} \cdot \frac{\partial y}{\partial a} \cdot \frac{\partial a}{\partial w}$
+
+$\frac{\partial Error}{\partial b} = \frac{\partial Error}{\partial y} \cdot \frac{\partial y}{\partial a} \cdot \frac{\partial a}{\partial b}$
+
+연쇄법칙에 근거해서 뒤에서부터 구해보겠다. (여기서 뒤라는 것은 신경망의 연산 순서의 반대)
 
 $\frac{\partial Error}{\partial y} = \frac{\partial \frac{1}{2} (y-t)^2}{\partial y} = y - t$
 
