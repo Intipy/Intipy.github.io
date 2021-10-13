@@ -94,9 +94,51 @@ $\frac{\partial Error}{\partial W_2} = \frac{\partial Error}{\partial Z_2}  \cdo
 $\frac{\partial Error}{\partial B_2} = \frac{\partial Error}{\partial Z_2}  \cdot \frac{\partial Z_2}{\partial A_2} \cdot \frac{\partial A_2}{\partial B_2}$
 
 
+이렇게 각 계층에 대한 편미분으로 분해했으니 층마다 편미분을 해보겠다.
 
+<br/>
 
+$\frac{\partial Error}{\partial Z_2} = \frac{\partial \frax{1}{2} (Z_2 - T)^2}{\partial Z_2} = Z_2 - T$
 
+위 식은 오차에 대해 출력을 미분한 값이다.
+
+<br/>
+
+$\frac{\partial Z_2}{\partial A_2} = \frac{\partial \sigma(A_2)}{\partial A_2} = \sigma'(A_2) = \sigma(A_2) \cdot (1 - \sigma(A_2)) = Z_2(1 - Z_2)$
+
+위 식은 출력에 대해 가중합($A_2$)을 미분한 것이다.
+
+<br/>
+
+$\frac{\partial A_2}{\partial W_2} = \frac{\partial Z_1 \cdot W_2 + B_2}{\partial W_2} = Z_1^T$
+
+위 식은 가중합($A_2$) 대해 가중치를 미분한 값이다.
+
+여기서 $Z_1^T$는 행렬 $Z_1$의 전치행렬(Transposed Matrix)을 나타낸다.
+
+어떤 실수값을 가지는 변수에 대해 미분했다면 전치행렬같은 개념 없이 미분이 쉽게 된다.
+
+예를 들어 위 식에서 Z와 W가 행렬이 아니었다면, $\frac{\partial a_2}{\partial w_2} = \frac{\partial z_1 \cdot w_2 + b_2}{\partial w_2} = z_1$
+
+이렇게 $z_1$로 미분이 되지만 행렬일 경우에 $Z_1^T$로 미분이 된다.
+
+미분한 값이 어째서 전치행렬이 되는가에 대한 답은 *자코비안 미분*에 있다.
+
+자코비안 미분에 대한 자세한 것은 나중에 설명할 것이고, 지금은 전치행렬이 나온다는 것만 알도록 하자.
+
+<br/>
+
+$\frac{\partial A_2}{\partial B_2} = \frac{\partial Z_1 \cdot W_2 + B_2}{\partial B_2} = 1$
+
+위 식은 가중합($A_2$) 대해 편향을 미분한 값이다.
+
+<br/>
+
+이제 각 층에 대해서 미분이 끝났으므로 손실에 대한 가중치와 편향의 기울기를 구할 수 있다.
+
+$\frac{\partial Error}{\partial W_2} = \frac{\partial Error}{\partial Z_2}  \cdot \frac{\partial Z_2}{\partial A_2} \cdot \frac{\partial A_2}{\partial W_2} = (Z_2 - T)Z_2(1-Z_2)Z_1^T$
+
+$\frac{\partial Error}{\partial B_2} = \frac{\partial Error}{\partial Z_2}  \cdot \frac{\partial Z_2}{\partial A_2} \cdot \frac{\partial A_2}{\partial B_2}$
 
 
 
