@@ -27,7 +27,7 @@ $\frac{dy}{dx} = \frac{dy}{du} /cdot \frac{du}{dx}$
 
 $\frac{f(g(x))}{x} = \frac{df(g(x))}{dg(x)} /cdot \frac{dg(x)}{dx}$
 
-${f(g(x))}$
+$\{ f(g(x)) \}' = f'(g(x)) \cdot f(g'(x)) $
 
 
 
