@@ -98,6 +98,8 @@ $1\times0.4 + 1\times0.3 - 0.6 = 1\;(\because 0.1 > 0)$
 
 하지만 논리게이트 중에서 XOR 이라는 것이 있는데, 다음과 같다.
 
+![](/assets/image/xorgate.jpg)
+
 
 
 
