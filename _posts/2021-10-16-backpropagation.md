@@ -101,7 +101,7 @@ $$step(x)=\begin{cases}
 
 또한 step(x)를 아래처럼 그릴 수 있다.
 
-![](/assets/image/stepfunction.png)
+![](/assets/image/step_function.png)
 
 <br/>
 
