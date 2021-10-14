@@ -20,7 +20,7 @@ last_modified_at: 2021-10-12T08:06:00-05:00
 
 출력값 y는 다음과 같다.
 
-$$y=\begin{cases} 0\;(x_1w_1+x_2w_2 \leq \theta)  \\1\;(x_1w_1+x_2w_2>\theta) \end{cases}$$
+$y=\begin{cases} 0\;(x_1w_1+x_2w_2 \leq \theta)  \\1\;(x_1w_1+x_2w_2>\theta) \end{cases}$
 
 입력이 각 선을 지나면서 w와 곱해진다.
 
