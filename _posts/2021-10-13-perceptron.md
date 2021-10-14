@@ -36,7 +36,10 @@ $y=\begin{cases} 0\;(x_1w_1+x_2w_2 \leq \theta)  \\1\;(x_1w_1+x_2w_2>\theta) \en
 
  
 
-$y=\begin{cases} 0\;(x_1w_1+x_2w_2+b\leq0)  \\1\;(x_1w_1+x_2w_2+b>0) \end{cases}$
+$y=\begin{cases} 
+0\;(x_1w_1+x_2w_2+b\leq0)  
+\\1\;(x_1w_1+x_2w_2+b>0) 
+\end{cases}$
 
 
 $\theta$를 -b로 치환하고 좌변으로 넘긴 결과, 0을 기준으로 나눠지는 것을 볼 수 있다.
