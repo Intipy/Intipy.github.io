@@ -92,7 +92,7 @@ $$y=\begin{cases}
 
 여기에서 활성화함수로 쓰인 계단함수만 따로 떼어내면 아래와 같다.
 
-$$y = step(x)$$ 에서
+$y = step(x)$에서
 
 $$step(x)=\begin{cases} 
 0\;(x\leq0) 
