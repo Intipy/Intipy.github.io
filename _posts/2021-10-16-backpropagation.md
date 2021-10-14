@@ -81,8 +81,10 @@ x가 클수록 1로 수렴하며, 작을수록 0으로 수렴한다.
 
 바로 계단 함수이다.
 
-$$y=\begin{cases} 0;(x_1w_1+x_2w_2 \leq \theta) 
-\1;(x_1w_1+x_2w_2>\theta) \end{cases}$$
+$y=\begin{cases} 
+0;(x_1w_1+x_2w_2 \leq \theta) \\
+1;(x_1w_1+x_2w_2>\theta) 
+\end{cases}$
 
 AND 게이트 문제를 풀기 위해 구성한 신경망의 구조를 수식으로 풀어낸 것이다. (퍼셉트론을 설명한 글에서 이미 설명하였다.)
 
@@ -92,8 +94,10 @@ AND 게이트 문제를 풀기 위해 구성한 신경망의 구조를 수식으
 
 $y = step(x)$ 에서
 
-$$step(x)=\begin{cases} 0;(x\leq0) 
-\1;(x>0) \end{cases}$$
+$step(x)=\begin{cases} 
+0;(x\leq0) \\
+1;(x>0) 
+\end{cases}$
 
 이렇게 step(x)는 계단함수이며, 우리가 AND 게이트 신경망을 구현할 때 활성화함수로 쓰였다.
 
