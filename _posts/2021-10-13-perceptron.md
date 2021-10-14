@@ -20,7 +20,7 @@ last_modified_at: 2021-10-12T08:06:00-05:00
 
 출력값 y는 다음과 같다.
 
-$y=\begin{cases} 0\;(x_1w_1+x_2w_2 \leq \theta)  \\1\;(x_1w_1+x_2w_2>\theta) \end{cases}$
+$$y=\begin{cases} 0\;(x_1w_1+x_2w_2 \leq \theta)  \\1\;(x_1w_1+x_2w_2>\theta) \end{cases}$$
 
 입력이 각 선을 지나면서 w와 곱해진다.
 
@@ -36,10 +36,10 @@ $y=\begin{cases} 0\;(x_1w_1+x_2w_2 \leq \theta)  \\1\;(x_1w_1+x_2w_2>\theta) \en
 
  
 
-$y=\begin{cases} 
+$$y=\begin{cases} 
 0\;(x_1w_1+x_2w_2+b\leq0)  
 \\1\;(x_1w_1+x_2w_2+b>0) 
-\end{cases}$
+\end{cases}$$
 
 
 $\theta$를 -b로 치환하고 좌변으로 넘긴 결과, 0을 기준으로 나눠지는 것을 볼 수 있다.
