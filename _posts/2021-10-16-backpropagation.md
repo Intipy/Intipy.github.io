@@ -2,7 +2,7 @@
 title:  "오차 역전파법(Backpropagation)"
 
 categories:
-  - AI
+  - Machine Learning 
 last_modified_at: 2021-10-12T08:06:00-05:00
 
 ---
