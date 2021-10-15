@@ -2,7 +2,7 @@
 title:  "교차 엔트로피 오차(Cross Entropy Error, CEE)에 대하여"
 
 categories:
-  - AI
+  - Machine Learning 
 last_modified_at: 2021-10-12T08:06:00-05:00
 
 ---
