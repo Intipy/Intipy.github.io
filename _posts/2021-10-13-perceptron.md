@@ -2,7 +2,7 @@
 title:  "퍼셉트론(Perceptron)"
 
 categories:
-  - AI
+  - Machine Learning 
 last_modified_at: 2021-10-12T08:06:00-05:00
 
 ---
