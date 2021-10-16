@@ -7,3 +7,10 @@ categories:
 last_modified_at: 2021-10-12T08:06:00-05:00
 
 ---
+
+
+
+해당 글은 
+Enabling Spike-Based Backpropagation For Training Deep Neural Network Architectures (https://arxiv.org/abs/1903.06379) 
+라는 논문을 정리한 글이다.
+
