@@ -68,7 +68,7 @@ post-spikes는 현재의 LIF 뉴런이 일으킨 스파이크로, 다음 뉴런�
 <br/>
 LIF 뉴런을 수식으로 나타내면 아래와 같다.
 
-$\Tau_m frac{dV_{mem}}{dt} = -v_{mem} + I(t)$
+$\tau_m frac{dV_{mem}}{dt} = -v_{mem} + I(t)$
 
 
 
