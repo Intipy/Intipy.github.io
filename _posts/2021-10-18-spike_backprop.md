@@ -103,7 +103,7 @@ $n^l$은 l번째 레이어(층)의 뉴런 개수를 말한다. i번째 뉴런부
 
 $\theta_i(t-t_k) = \begin{cases}
       1 (t = t_k)\\
-      0 (t \neq t_k)
+      \\0 (t \neq t_k)
     \end{cases}$
 
 
