@@ -211,13 +211,49 @@ $\frac{\partial a_{IF}}{\partial net} \approx \frac{1}{V_{th}} \cdot 1 = \frac{1
 
 $a_{IF} \approx \frac{1}{V_{th}} net(t) \approx \frac{1}{V_{th}} V_{mem}^{total, IF}$ 
 
-$\frac{\partial a_{IF}(t)}{\partial t} \approx \frac{1}{V_{th}} \frac{\partial V_{mem}^{total, IF}}{\partial t}$
+$\frac{\partial a_{IF}(t)}{\partial t} \approx \frac{1}{V_{th}} \frac{\partial V_{mem}^{total, IF}(t)}{\partial t}$
 
 위 4개의 식은 앞서 언급한 정의와 계산에 의해 자명하게 나타나는 식이다.
 마지막 식은 IF 뉴런의 출력에 대해 시간으로 미분한 것은 IF 뉴런의 총 막전위를 시간으로 미분한 것에 1/threshold 를 곱해준 것과 같다는 말이다. 
 뉴런의 출력은 이산적 스파이크 이므로 원래는 미분이 불가능하지만, 근사치를 구해 역전파를 수행하기 위함이다.
 
 그리고 이산적인 스파이크에 대해 시간으로 미분한 것은 스파이크의 빈도를 나타내는 함수 $rate(t)$로 나타낼 수 있다.
+그리고 IF 뉴런의 총 막전위와 출력에 대한 미분으로 LIF에서의 값도 근사할 수 있다.
+
+\frac{\partial V_{mem}^{total, IF}(t)}{\partial t} \approx V_{th} \frac{\partial a_{IF}(t)}{\partial t} \approx V_{th} rate(t)
+
+위처럼 rate 함수로서 나타낼 수 있다.
+
+그리고 LIF의 Leaky 효과를 나타내기 위해 f(t)를 이용해 아래처럼 LIF의 총 막전위에 대한 미분을 나타낸다.
+
+$\frac{\partial V_{mem}^{total, LIF}(t)}{\partial t} \approx V_{th} rate(t) + V_{th}\frac{\partial f(t)}{\partial t}$
+
+f(t)는 아래와 같이 Leaky한 뉴런을 나타내는데 쓰일 수 있다.
+
+$f(t) = \sum_{k}^{} exp(- \frac{t-t_k}{\tau_m})$
+
+위처럼 지수적인 Leaky effect를 낼 수 있는 것이다. 
+그리고 위에서 말한 LIF와 IF의 비율 관계에 따라 아래처럼 정리된 식이 있다.
+
+$\frac{\partial a_{IF}(t)}{\partial t} \approx \frac{1}{V_{th}} \frac{\partial V_{mem}^{total, IF}(t)}{\partial t} = \beta \frac{1}{V_{th}} \frac{\partial V_{mem}^{total, LIF}(t)}{\partial t}$
+
+이제 위의 몇개의 식들을 풀면 아래처럼 비율 $\beta$와 관련된 식을 도출할 수 있다.
+
+$\frac{1}{\beta} = 1 + \frac{1}{rate(t)} \frac{\partial f(t)}{\partial t}$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
