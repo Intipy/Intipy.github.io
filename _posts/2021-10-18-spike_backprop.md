@@ -207,7 +207,7 @@ $V_{th} a_{IF}(t)$는 스파이크/초기화 활동을 계산한다.
 
 $a_{IF} \approx \frac{1}{V_{th}} \sum_{i=1}^{n} \big( w_i x_i(t) \big) = \frac{1}{V_{th}} net(t)$ 
 
-$\frac{\partial a_{IF}}{\partial net \approx \frac{1}{V_{th}} \cdot 1 = \frac{1}{V_{th}}$
+$\frac{\partial a_{IF}}{\partial net} \approx \frac{1}{V_{th}} \cdot 1 = \frac{1}{V_{th}}$
 
 $a_{IF} \approx \frac{1}{V_{th}} net(t) \approx \frac{1}{V_{th}} V_{mem}^{total, IF}$ 
 
