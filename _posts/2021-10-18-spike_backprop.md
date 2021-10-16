@@ -12,9 +12,7 @@ last_modified_at: 2021-10-12T08:06:00-05:00
 
 해당 글은
 <br/>
-Enabling Spike-Based Backpropagation For Training Deep Neural Network Architectures 
-<br/>
-(https://arxiv.org/abs/1903.06379) 
+[Enabling Spike-Based Backpropagation For Training Deep Neural Network Architectures](https://arxiv.org/abs/1903.06379) 
 <br/>
 라는 논문을 소개하는 글이다.
 <br/>
@@ -273,13 +271,17 @@ $\frac{\partial E}{\partial w^l} = x^l(t) * (\delta^{l+1})^{Tr}$
 
 $w^l ; \colon= w^l - \alpha \frac{\partial E}{\partial w^l}$
 
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
- 
-
-
-
-
-
+[구현 코드 GitHub](https://github.com/Intipy/spike-based-backpropagation)
 
 
 
