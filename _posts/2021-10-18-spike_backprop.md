@@ -217,13 +217,14 @@ $\frac{\partial a_{IF}(t)}{\partial t} \approx \frac{1}{V_{th}} \frac{\partial V
 마지막 식은 IF 뉴런의 출력에 대해 시간으로 미분한 것은 IF 뉴런의 총 막전위를 시간으로 미분한 것에 1/threshold 를 곱해준 것과 같다는 말이다. 
 뉴런의 출력은 이산적 스파이크 이므로 원래는 미분이 불가능하지만, 근사치를 구해 역전파를 수행하기 위함이다.
 
-그리고 이산적인 스파이크에 대해 시간으로 미분한 것은 스파이크의 빈도를 나타내는 함수 $rate(t)$로 나타낼 수 있다.
-그리고 IF 뉴런의 총 막전위와 출력에 대한 미분으로 LIF에서의 값도 근사할 수 있다.
+그리고 이산적인 스파이크에 대해 시간으로 미분한 것은 스파이크의 빈도를 나타내는 함수 $rate(t)$로 나타낼 수 있다. 
+rate(t) 함수는 $\frac{a(t)}{t}$이며, a(t)가 스파이크의 횟수일 때, t로 나눔으로서 빈도를 구한다.
+이것은 상수 스파이크 시간일 때, a(t)를 t로 미분한 것과 같다. 
+따라서 IF 뉴런의 총 막전위와 출력에 대한 미분으로 LIF에서의 값도 근사할 수 있다.
 
 $\frac{\partial V_{mem}^{total, IF}(t)}{\partial t} \approx V_{th} \frac{\partial a_{IF}(t)}{\partial t} \approx V_{th} rate(t)$
 
 위처럼 rate 함수로서 나타낼 수 있다.
-
 그리고 LIF의 Leaky 효과를 나타내기 위해 f(t)를 이용해 아래처럼 LIF의 총 막전위에 대한 미분을 나타낸다.
 
 $\frac{\partial V_{mem}^{total, LIF}(t)}{\partial t} \approx V_{th} rate(t) + V_{th}\frac{\partial f(t)}{\partial t}$
@@ -233,14 +234,19 @@ f(t)는 아래와 같이 Leaky한 뉴런을 나타내는데 쓰일 수 있다.
 $f(t) = \sum_{k}^{} exp(- \frac{t-t_k}{\tau_m})$
 
 위처럼 미분으로서 지수적인 Leaky decay effect를 낼 수 있는 것이다. 
-그리고 f(t)는 미분할 때 우극한을 이용해 유사미분을 한다. $t \rightarrow t_k^{+} $
+그리고 f(t)는 미분할 때 우극한을 이용해 유사미분을 한다. ($t \rightarrow t_k^{+} $)
 그리고 위에서 말한 LIF와 IF의 비율 관계에 따라 아래처럼 정리된 식이 있다.
 
 $\frac{\partial a_{IF}(t)}{\partial t} \approx \frac{1}{V_{th}} \frac{\partial V_{mem}^{total, IF}(t)}{\partial t} = \beta \frac{1}{V_{th}} \frac{\partial V_{mem}^{total, LIF}(t)}{\partial t}$
 
-이제 위의 몇개의 식들을 풀면 아래처럼 비율 $\beta$와 관련된 식을 도출할 수 있다.
+이제 위의 몇개의 식들을 풀면 아래처럼 비율 $\beta$와 관련된 식을 도출할 수 있다. 
 
 $\frac{1}{\beta} = 1 + \frac{1}{rate(t)} \frac{\partial f(t)}{\partial t}$
+
+위 식에서 IF의 평균적 입력에 LIF의 Leaky한 효과를 추가하기 위한 두번째 항을 더하여 $\frac{1}{\beta}$를 구한다. IF가 LIF의 $\beta$배 이므로, 그 역수는 IF에서 LIF로의 비율이다. 이 비율이 IF의 입력에 Leaky를 더한 것과 같다. 
+그리고 역전파 과정에서 기울기 소실 현상을 방지하기 위해 Leaky 항을 T로 나누어주게 되는데, f의 미분에 감마로 나눈 값으로 미분이 된다.
+감마는 총 순전파 시간동안 특정 뉴런에 대한 스파이크 출력의 수를 나타낸다.
+그리고 아래처럼 정리가 가능하다.
 
 $\frac{\partial a_{LIF}}{\partial net} = \frac{1}{V_{th} + \epsilon} = \frac{1}{\beta V_{th}} \approx \frac{1}{V_{th}} \big(1 + \frac{1}{\gamma} f'(t) \big) = \frac{1}{V_{th}} \big(1 + \frac{1}{\gamma} \sum_{k}{}-\frac{1}{\tau_m} e^{- \frac{t-t_k}{\tau_m}} \big)$
 
