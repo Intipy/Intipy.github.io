@@ -22,6 +22,7 @@ Enabling Spike-Based Backpropagation For Training Deep Neural Network Architectu
 <br/>
 <br/>
 **ABSTRACT**
+<br/>
 *스파이킹 신경 네트워크(SNN)는 최근 눈에 띄는 신경 컴퓨팅 패러다임으로 부상하고 있다.
 그러나 일반적인 얕은 SNN 아키텍처는 복잡한 표현을 표현할 수 있는 용량이 제한적이지만 입력 스파이크를 사용하여 심층 SNN을 교육하는 것은 지금까지 성공하지 못했다. 
 이 문제를 해결하기 위해 기성 훈련된 심층 인공 신경망을 SN으로 전환하는 것과 같은 다양한 방법이 제안되었다. 
