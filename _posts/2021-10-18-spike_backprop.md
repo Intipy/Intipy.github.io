@@ -139,7 +139,7 @@ j번째 현재 뉴런의 출력을 $a_j^{l}(t)$로 나타냈다.
 
 $output = \frac{V_{mem}^L(T)}{T}$
 
-이렇게 스파이크가 아닌 막전위의를 시간의 스텝 수로 나눈 것이 최종 레이어의 출력이다.
+이렇게 스파이크가 아닌 막전위를 시간의 스텝 수로 나눈 것이 최종 레이어의 출력이다.
 여기까지가 해당 논문에서 스파이킹 신경망의 순전파(Feedforward)로서 다룬 부분이다.
 이제 역전파(Backpropagation)를 통해 가중치를 업데이트할 편미분계수를 찾는 과정을 다룰 것이다.
 
@@ -148,7 +148,12 @@ $output = \frac{V_{mem}^L(T)}{T}$
 <br/>
 <br/>
 
+우선 역전파의 기본인 연쇄법칙을 통한 각 레이어에 대한 편미분으로의 분해를 구하도록 할 것이다. 
+E는 에러이고, a, net, w 는 앞에서 설명한 것과 같다.
+$a_{LIF}$는 LIF 뉴런의 출력을 말하는 것이고, 후에 IF 뉴런의 출력과 혼동하지 않기 위함이다.
 
+$\frac{\partial E}{\partial w^l} = \frac{\partial E}{\partial a_{LIF}} \frac{\partial a_{LIF}}{\partial net} \frac{\partial net}{\partial w_l}$
 
+위처럼 오차에 대한 가중치의 편미분을 3개로 분리했다.
 
 
