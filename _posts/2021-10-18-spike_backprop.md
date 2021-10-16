@@ -250,9 +250,22 @@ $\frac{1}{\beta} = 1 + \frac{1}{rate(t)} \frac{\partial f(t)}{\partial t}$
 
 $\frac{\partial a_{LIF}}{\partial net} = \frac{1}{V_{th} + \epsilon} = \frac{1}{\beta V_{th}} \approx \frac{1}{V_{th}} \big(1 + \frac{1}{\gamma} f'(t) \big) = \frac{1}{V_{th}} \big(1 + \frac{1}{\gamma} \sum_{k}{}-\frac{1}{\tau_m} e^{- \frac{t-t_k}{\tau_m}} \big)$
 
+<br/>
+<br/>
+<br/>
+<br/>
 
+이제 정리를 해보겠다. 
+마지막 층 L에서의 오차 기울기 $\delta^L$는 우리가 이미 구했듯이 아래와 같다.
 
+$\delta^L = \frac{\partial E}{\partial output} \frac{\partial output}{\partial net^L} = e \frac{1}{T} = \frac{e}{T}$
 
+그리고 은닉층에서의 오차 기울기 $\delta^l$는 아래처럼 쓸 수 있다.
+
+$\delta^l = \big( (w^l)^{Tr} \cdot \delta^{l+1} \big) * a'_{LIF}(net^l)$
+
+$\cdot$는 행렬곱이며, *은 원소별 곱이다.
+ 
 
 
 
