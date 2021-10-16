@@ -271,6 +271,8 @@ $\frac{\partial net}{\partial w^l} = \frac{\partial w^l x^l(t)}{\partial w^l} = 
 
 $\frac{\partial E}{\partial w^l} = x^l(t) * (\delta^{l+1})^{Tr}$
 
+$w^l := w^l - \alpha$
+
 
  
 
