@@ -232,7 +232,8 @@ f(t)는 아래와 같이 Leaky한 뉴런을 나타내는데 쓰일 수 있다.
 
 $f(t) = \sum_{k}^{} exp(- \frac{t-t_k}{\tau_m})$
 
-위처럼 지수적인 Leaky effect를 낼 수 있는 것이다. 
+위처럼 미분으로서 지수적인 Leaky decay effect를 낼 수 있는 것이다. 
+그리고 f(t)는 미분할 때 우극한을 이용해 유사미분을 한다. $t \rightarrow t_k^{+} $
 그리고 위에서 말한 LIF와 IF의 비율 관계에 따라 아래처럼 정리된 식이 있다.
 
 $\frac{\partial a_{IF}(t)}{\partial t} \approx \frac{1}{V_{th}} \frac{\partial V_{mem}^{total, IF}(t)}{\partial t} = \beta \frac{1}{V_{th}} \frac{\partial V_{mem}^{total, LIF}(t)}{\partial t}$
@@ -240,6 +241,8 @@ $\frac{\partial a_{IF}(t)}{\partial t} \approx \frac{1}{V_{th}} \frac{\partial V
 이제 위의 몇개의 식들을 풀면 아래처럼 비율 $\beta$와 관련된 식을 도출할 수 있다.
 
 $\frac{1}{\beta} = 1 + \frac{1}{rate(t)} \frac{\partial f(t)}{\partial t}$
+
+$\frac{\partial a_{LIF}}{\partial net} = \frac{1}{V_{th} + \epsilon} = \frac{1}{\beta V_{th}} \approx \frac{1}{V_{th}} \big(1 + \frac{1}{\gamma} f'(t) \big) = \frac{1}{V_{th}} \big(1 + \frac{1}{\gamma} \sum_{k}{}-\frac{1}{\tau_m} e^{- \frac{t-t_k}{\tau_m}} \big)$
 
 
 
