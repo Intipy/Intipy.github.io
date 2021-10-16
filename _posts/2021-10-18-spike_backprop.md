@@ -118,7 +118,9 @@ pre-neuron(이전 뉴런)에서의 입력과 가중치가 곱해진 최종적인
 l번째 레이어의 j번째 뉴런이며, 이것은 현재 뉴런이다.(j-th post-neuron)
 이것을 아래와 같이 구할 수 있다.
 
-$net_j^l(t) = \sum_{i = 1}{n^{l - 1}} w_{ij}^{l - 1} x_i^{l - 1}(t)$
+$net_j^l(t) = \sum_{i = 1}^{n^{l - 1}} w_{ij}^{l - 1} x_i^{l - 1}(t)$
+
+$x_i^{l - 1}(t) = \sum_{t}^{} \sum_{k}^{} \theta_i^{l - 1}(t-t_k)$
 
 
 
