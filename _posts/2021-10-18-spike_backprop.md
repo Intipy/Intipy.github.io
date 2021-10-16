@@ -101,10 +101,10 @@ $n^l$은 l번째 레이어(층)의 뉴런 개수를 말한다. i번째 뉴런부
 이것을 모든 뉴런에 대해 다 더한다는 말이다.
 세타함수가 스파이크에 관한 함수라고 했는데, 아래처럼 표현된다.
 
-$\theta_i(t-t_k) = \begin{array}
+$\theta_i(t-t_k) = \begin{cases}
       1 (t = t_k)\\
       0 (t \neq t_k)
-    \end{array}$
+    \end{cases}$
 
 
 
