@@ -220,7 +220,7 @@ $\frac{\partial a_{IF}(t)}{\partial t} \approx \frac{1}{V_{th}} \frac{\partial V
 그리고 이산적인 스파이크에 대해 시간으로 미분한 것은 스파이크의 빈도를 나타내는 함수 $rate(t)$로 나타낼 수 있다.
 그리고 IF 뉴런의 총 막전위와 출력에 대한 미분으로 LIF에서의 값도 근사할 수 있다.
 
-\frac{\partial V_{mem}^{total, IF}(t)}{\partial t} \approx V_{th} \frac{\partial a_{IF}(t)}{\partial t} \approx V_{th} rate(t)
+$\frac{\partial V_{mem}^{total, IF}(t)}{\partial t} \approx V_{th} \frac{\partial a_{IF}(t)}{\partial t} \approx V_{th} rate(t)$
 
 위처럼 rate 함수로서 나타낼 수 있다.
 
