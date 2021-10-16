@@ -213,6 +213,12 @@ $a_{IF} \approx \frac{1}{V_{th}} net(t) \approx \frac{1}{V_{th}} V_{mem}^{total,
 
 $\frac{\partial a_{IF}(t)}{\partial t} \approx \frac{1}{V_{th}} \frac{\partial V_{mem}^{total, IF}}{\partial t}$
 
+위 4개의 식은 앞서 언급한 정의와 계산에 의해 자명하게 나타나는 식이다.
+마지막 식은 IF 뉴런의 출력에 대해 시간으로 미분한 것은 IF 뉴런의 총 막전위를 시간으로 미분한 것에 1/threshold 를 곱해준 것과 같다는 말이다. 
+뉴런의 출력은 이산적 스파이크 이므로 원래는 미분이 불가능하지만, 근사치를 구해 역전파를 수행하기 위함이다.
+
+그리고 이산적인 스파이크에 대해 시간으로 미분한 것은 스파이크의 빈도를 나타내는 함수 $rate(t)$로 나타낼 수 있다.
+
 
 
 
