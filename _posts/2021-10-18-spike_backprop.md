@@ -16,5 +16,5 @@ Enabling Spike-Based Backpropagation For Training Deep Neural Network Architectu
 <br/>
 (https://arxiv.org/abs/1903.06379) 
 <br/>
-라는 논문을 정리한 글이다.
+라는 논문을 소개하는 글이다.
 
