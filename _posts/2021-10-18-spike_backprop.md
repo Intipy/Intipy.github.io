@@ -162,6 +162,13 @@ $\frac{\partial E}{\partial output} = \frac{\partial \frac{1}{2} (output - targe
 위처럼 정답과 출력의 차이가 미분한 값이 되며, 이를 e라고 칭하자.
 그리고 출력에 대한 입력의 미분은 아래처럼 계산된다.
 
-
 $\frac{\partial output}{\partial net} = \frac{\partial \frac{1}{T}V_{mem}^L(T)}{\partial net} = \frac{\partial \frac{1}{T}net^L(T)}{\partial net} = \frac{1}{T}$
+
+위처럼 $\frac{1}{T}$로 미분이 된다.
+net = wx 이므로 $\frac{\partial net}{\partial w} = x$
+
+이제 은닉층에서의 오차 역전파를 보겠다.
+
+
+
 
