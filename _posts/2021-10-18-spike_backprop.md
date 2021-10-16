@@ -155,5 +155,13 @@ $a_{LIF}$는 LIF 뉴런의 출력을 말하는 것이고, 후에 IF 뉴런의 �
 $\frac{\partial E}{\partial w^l} = \frac{\partial E}{\partial a_{LIF}} \frac{\partial a_{LIF}}{\partial net} \frac{\partial net}{\partial w_l}$
 
 위처럼 오차에 대한 가중치의 편미분을 3개로 분리했다.
+손실함수로 평균 제곱 오차를 사용하면 오차에 대한 출력의 미분은 정답에서 출력을 뺀 것으로 결정된다.
 
+$\frac{\partial E}{\partial output} = \frac{\partial \frac{1}{2} (output - target)^2}{\partial output} = output - target = e$
+
+위처럼 정답과 출력의 차이가 미분한 값이 되며, 이를 e라고 칭하자.
+그리고 출력에 대한 입력의 미분은 아래처럼 계산된다.
+
+
+$\frac{\partial output}{\partial net} = \frac{\partial \frac{1}{T}V_{mem}^L(T)}{\partial net} = \frac{\partial \frac{1}{T}net^L(T)}{\partial net} = \frac{1}{T}$
 
