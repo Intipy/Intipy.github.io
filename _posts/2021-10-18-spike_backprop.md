@@ -265,6 +265,13 @@ $\delta^L = \frac{\partial E}{\partial output} \frac{\partial output}{\partial n
 $\delta^l = \big( (w^l)^{Tr} \cdot \delta^{l+1} \big) * a'_{LIF}(net^l)$
 
 $\cdot$는 행렬곱이며, *은 원소별 곱이다.
+이제 아래처럼 경사하강을 통한 업데이트를 할 수 있다.
+
+$\frac{\partial net}{\partial w^l} = \frac{\partial w^l x^l(t)}{\partial w^l} = x^l(t)$
+
+$\frac{\partial E}{\partial w^l} = x^l(t) * (\delta^{l+1})^{Tr}$
+
+
  
 
 
