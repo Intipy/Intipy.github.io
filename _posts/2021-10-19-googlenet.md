@@ -41,7 +41,16 @@ GoogLeNet은 파라미터를 줄이고 정확도를 높이는 것을 핵심적�
 NIN에서 제안된 개념 중 하나로 MLP Convolution Layer 라는 것이 제안되었다. 
 아래 그림을 통해 설명하겠다. 
 
-![](/assets/image/mlp_conv_layer.png)
+![](/assets/image/mlp_conv_layer.jpg)
+
+왼쪽은 일반적인 Convolution Layer이다. 
+합성곱 연산을 통해 Feature Map을 출력하는 구조이다. 
+하지만 오른쪽은 NIN에서 제안한 Multi Layer Perceptron Convolution Layer 라는 구조이다. 
+합성곱 연산 후 풀링, 신경망을 거쳐 Feature Map을 구하는 것이다. 
+일반적인 하나의 합성곱 신경망 자체의 구조를 띄고 있어 Micro Network 라고도 한다.
+
+
+
 
 
 
