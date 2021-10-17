@@ -194,6 +194,8 @@ $V_{th} + \epsilon$ 만큼의 시간이 흘렀을 때, 뉴런의 총 막전위�
 
 $V_{th} + \epsilon = \beta V_{th}$
 
+<br/>
+
 그리고 IF 뉴런의 막전위는 아래처럼 표현된다.
 
 $V_{mem}(t) \approx \sum_{i=1}^{n} \big( w_i x_i(t) \big) - V_{th}a_{IF}(t)$
@@ -207,19 +209,27 @@ $a_{IF} \approx \frac{1}{V_{th}} \sum_{i=1}^{n} \big( w_i x_i(t) \big) = \frac{1
 
 $V_{th}$로 나누면 위의 식처럼 정리가 된다. 또한 wx는 입력(net)이다. 
 
+<br/>
+
 $\frac{\partial a_{IF}}{\partial net} \approx \frac{1}{V_{th}} \cdot 1 = \frac{1}{V_{th}}$
 
 $a_{IF}$가 net에 대한 식으로 정리가 가능하므로, 그에 따라 위의 식처럼 미분한 값이 $\frac{1}{V_{th}}$가 된다.
 
+<br/>
+
 $a_{IF} \approx \frac{1}{V_{th}} net(t) \approx \frac{1}{V_{th}} V_{mem}^{total, IF}$ 
 
 또한 IF 뉴런의 경우, 총 막전위가 총 입력(net)과 거의 근사치이다. 입력이 들어온 만큼 막전위가 증가하는 단조로운 증가 양상을 띈다.
+
+<br/>
 
 $\frac{\partial a_{IF}(t)}{\partial t} \approx \frac{1}{V_{th}} \frac{\partial V_{mem}^{total, IF}(t)}{\partial t}$
 
 위의 식은 IF 뉴런의 출력에 대해 시간으로 미분한 것이 IF 뉴런의 총 막전위를 시간으로 미분한 것에 1/threshold 를 곱해준 것과 같다는 말이다. 
 IF 뉴런의 출력 스파이크에 대한 미분을 총 막전위에 대한 미분으로 표현했다. 
 뉴런의 출력은 이산적 스파이크이므로 원래는 미분이 불가능하지만, 근사치를 구해 역전파를 수행하기 위함이다.
+
+<br/>
 
 그리고 이산적인 스파이크에 대해 시간으로 미분한 것은 스파이크의 빈도를 나타내는 함수 $rate(t)$로 나타낼 수 있다. 
 rate(t) 함수는 $\frac{a(t)}{t}$이며, a(t)가 스파이크의 횟수일 때, t로 나눔으로서 빈도를 구한다.
@@ -242,6 +252,8 @@ $f(t) = \sum_{k}^{} exp(- \frac{t-t_k}{\tau_m})$
 그리고 위에서 말한 LIF와 IF의 비율 관계에 따라 아래처럼 정리된 식이 있다.
 
 $\frac{\partial a_{IF}(t)}{\partial t} \approx \frac{1}{V_{th}} \frac{\partial V_{mem}^{total, IF}(t)}{\partial t} = \beta \frac{1}{V_{th}} \frac{\partial V_{mem}^{total, LIF}(t)}{\partial t}$
+
+<br/>
 
 이제 위의 몇개의 식들을 풀면 아래처럼 비율 $\beta$와 관련된 식을 도출할 수 있다. 
 
