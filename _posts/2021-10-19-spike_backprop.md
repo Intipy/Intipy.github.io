@@ -209,7 +209,7 @@ $V_{th}$로 나누면 위의 식처럼 정리가 된다. 또한 wx는 입력(net
 
 $\frac{\partial a_{IF}}{\partial net} \approx \frac{1}{V_{th}} \cdot 1 = \frac{1}{V_{th}}$
 
-첫번째 식에서 $a_{IF}$를 net에 대한 식으로 정리 하였으며, 그에 따라 위의 식처럼 미분한 값이 $\frac{1}{V_{th}}$가 된다.
+$a_{IF}$가 net에 대한 식으로 정리가 가능하므로, 그에 따라 위의 식처럼 미분한 값이 $\frac{1}{V_{th}}$가 된다.
 
 $a_{IF} \approx \frac{1}{V_{th}} net(t) \approx \frac{1}{V_{th}} V_{mem}^{total, IF}$ 
 
