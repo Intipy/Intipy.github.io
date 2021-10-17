@@ -83,6 +83,22 @@ CCCP의 구조를 1×1 Filter Convolution으로 유사하게 표현 가능하기
 즉, 중간에 예측을 하는 하나의 층을 추가해, 최종단이 아닌 곳에서도 Loss를 구한다는 것이다. 
 그리고 중간의 오차가 기존 오차에 영향을 과하게 미치지 않도록 하기 위해 0.3의 가중치를 곱해서 이용한다.
 
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+[구현 코드 GitHub](https://github.com/Intipy/googLeNet)
+
+
+
+
  
 
 
