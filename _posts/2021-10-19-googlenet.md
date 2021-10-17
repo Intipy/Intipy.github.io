@@ -54,6 +54,9 @@ NIN에서 제안된 개념 중 하나로 MLP Convolution Layer 라는 것이 제
 
 그리고 위 사진처럼 1×1 Filter Convolution 층이 있는 걸 볼 수 있는데, 
 이것은 GoogLeNet의 목적인 경량화된 신경망과 병목현상 제거에 필요한 차원 축소의 역할을 한다. 
+그리고 1×1 Filter Convolution의 의미를 알아보기 위해 CCCP(Cascaded Cross Channel Pooling)를 알아보겠다. 
+
+![](/assets/image/cross_channel.jpg)
 
 
 
