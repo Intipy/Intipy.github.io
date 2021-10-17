@@ -44,15 +44,16 @@ NIN에서 제안된 개념 중 하나로 MLP Convolution Layer 라는 것이 제
 ![](/assets/image/mlp_conv_layer.jpg)
 
 왼쪽은 일반적인 Convolution Layer이다. 
-합성곱 연산을 통해 Feature Map을 출력하는 구조이다. 
+합성곱 연산을 통해 바로 Feature Map을 출력하는 구조이다. 
 하지만 오른쪽은 NIN에서 제안한 Multi Layer Perceptron Convolution Layer 라는 구조이다. 
 합성곱 연산 후 풀링, 신경망을 거쳐 Feature Map을 구하는 것이다. 
-일반적인 하나의 합성곱 신경망 자체의 구조를 띄고 있어 Micro Network 라고도 한다.
+일반적인 하나의 합성곱 신경망 자체의 구조를 띄고 있어 Micro Network 라고도 한다. 
+이는 일반적인 Convolution에 비하여 비선형성(Non-Linearity)을 더 추가하기 위함이다. 
 
 ![](/assets/image/inception_module.jpg)
 
 그리고 위 사진처럼 1×1 Filter Convolution 층이 있는 걸 볼 수 있는데, 
-이것은 GoogLeNet의 목적인 경량화된 신경망에 필요한 차원 축소의 역할을 한다. 
+이것은 GoogLeNet의 목적인 경량화된 신경망과 병목현상 제거에 필요한 차원 축소의 역할을 한다. 
 
 
 
