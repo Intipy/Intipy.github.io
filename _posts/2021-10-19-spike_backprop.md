@@ -243,6 +243,8 @@ $\frac{\partial V_{mem}^{total, IF}(t)}{\partial t} \approx V_{th} \frac{\partia
 
 $\frac{\partial V_{mem}^{total, LIF}(t)}{\partial t} \approx V_{th} rate(t) + V_{th}\frac{\partial f(t)}{\partial t}$
 
+<br/>
+
 f(t)는 아래와 같이 Leaky한 뉴런을 나타내는데 쓰일 수 있다.
 
 $f(t) = \sum_{k}^{} exp(- \frac{t-t_k}{\tau_m})$
@@ -276,12 +278,18 @@ $\frac{\partial a_{LIF}}{\partial net} = \frac{1}{V_{th} + \epsilon} = \frac{1}{
 
 $\delta^L = \frac{\partial E}{\partial output} \frac{\partial output}{\partial net^L} = e \frac{1}{T} = \frac{e}{T}$
 
+<br/>
+
 그리고 은닉층에서의 오차 기울기 $\delta^l$는 아래처럼 쓸 수 있다.
 
 $\delta^l = \big( (w^l)^{Tr} \cdot \delta^{l+1} \big) * a'_{LIF}(net^l)$
 
+<br/>
+
 $\cdot$는 행렬곱이며, *은 원소별 곱이다.
 이제 아래처럼 경사하강을 통한 업데이트를 할 수 있다.
+
+<br/>
 
 $\frac{\partial net}{\partial w^l} = \frac{\partial w^l x^l(t)}{\partial w^l} = x^l(t)$
 
