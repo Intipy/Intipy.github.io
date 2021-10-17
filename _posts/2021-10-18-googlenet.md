@@ -73,6 +73,9 @@ CCCP의 구조를 1×1 Filter Convolution으로 유사하게 표현 가능하기
 
 ![](/assets/image/googlenet_.jpg)
 
+
+![](/assets/image/googlenet_info.png)
+
 보는 것처럼 모델이 매우 깊다. 
 따라서 기울기 소실(Gradient Vanishing) 문제가 발생할 수 있기 때문에 Auxiliary Classifier를 중간 layer에 추가하였다. 
 상대적으로 얇은 신경망의 강한 성능은 신경망의 중간 layer에서 생성된 특징이 매우 차별적이라는 것을 나타낸다. 
