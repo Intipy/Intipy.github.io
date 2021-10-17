@@ -52,13 +52,15 @@ NIN에서 제안된 개념 중 하나로 MLP Convolution Layer 라는 것이 제
 
 ![](/assets/image/inception_module.jpg)
 
-그리고 위 사진처럼 1×1 Filter Convolution 층이 있는 걸 볼 수 있는데, 
+(a)는 일반적인 모듈, (b)는 Dimension Reductions(차원 축소)가 된 모듈이다.
+(b)에서 1×1 Filter Convolution 층이 있는 걸 볼 수 있는데, 
 이것은 GoogLeNet의 목적인 경량화된 신경망과 병목현상 제거에 필요한 차원 축소의 역할을 한다. 
-그리고 1×1 Filter Convolution의 의미를 알아보기 위해 CCCP(Cascaded Cross Channel Pooling)를 알아보겠다. 
+차원이 축소되며 파라미터의 감소와 Overfitting을 방지한다. 
+1×1 Filter Convolution의 의미를 알아보기 위해 CCCP(Cascaded Cross Channel Pooling)를 알아보겠다. 
 
 ![](/assets/image/cross_channel.jpg)
 
-CCCP(Cascaded Cross Channel Pooling)는 NIN에서의 풀링 기법으로, 
+CCCP(Cascaded Cross Channel Pooling)는 NIN에서 소개된 풀링 기법으로, 
 직렬적인 Channel의 묶음으로 픽셀 별 Pooling를 하는 것이다. 
 Feature Map의 크기를 유지하며 Channel 개수를 줄이는 차원 축소의 효과를 얻기 위함이다. 
 CCCP의 구조를 1×1 Filter Convolution으로 유사하게 표현 가능하기 때문에 이로서 차원축소를 GoogLeNet이 이용했다. 
