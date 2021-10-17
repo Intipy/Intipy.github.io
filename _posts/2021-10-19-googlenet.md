@@ -71,7 +71,16 @@ CCCP의 구조를 1×1 Filter Convolution으로 유사하게 표현 가능하기
 이 신경망의 주요 아이디어는 Convolutional NN에서 Spase한, 밀집되지 않은 구조를 Dense, 밀집된 요소로서 근사하는 것이다. 
 그림으로 나타낸 GoogLeNet은 아래와 같다. 
 
-!
+![](/assets/image/googlenet_.jpg)
+
+보는 것처럼 모델이 매우 깊다. 
+따라서 기울기 소실(Gradient Vanishing) 문제가 발생할 수 있기 때문에 Auxiliary Classifier를 중간 layer에 추가하였다. 
+상대적으로 얇은 신경망의 강한 성능은 신경망의 중간 layer에서 생성된 특징이 매우 차별적이라는 것을 나타낸다. 
+이 중간 계층에 Auxiliary Classfiers를 추가하여 낮은 단계에서 차별점을 이용할 수 있다는 것과 뒤로 전달되는 기울기 신호를 증가하고, 추가적인 Regularization 효과를 기대한다고 말한다.
+
+ 
+
+
 
 
 
