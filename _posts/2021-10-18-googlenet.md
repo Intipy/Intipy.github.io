@@ -94,7 +94,7 @@ CCCP의 구조를 1×1 Filter Convolution으로 유사하게 표현 가능하기
 <br/>
 <br/>
 
-[구현 코드 GitHub](https://github.com/Intipy/googLeNet)
+[구현 코드 GitHub](https://github.com/Intipy/GoogLeNet)
 
 
 
