@@ -1,6 +1,6 @@
 
 ---
-title:  "Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift"
+title:  "Batch NormalizationAccelerating Deep Network Training by Reducing Internal Covariate Shift"
 
 categories:
 
