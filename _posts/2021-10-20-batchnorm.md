@@ -65,7 +65,7 @@ $\sigma_B^2$은 미니 배치에 대하여 구한 분산(variance)이다.
 
 이제 아래와 같이 정규화를 할 수 있다. 
 
-$\hat{x_i} \leftarrow \frac{x_i-\mu_B}{\sqrt{\sigma_B^2} + \epsilon}$
+$\hat{x_i} \leftarrow \frac{x_i-\mu_B}{\sqrt{\sigma_B^2+\epsilon}}$
 
 엡실론을 더해준 것은 분산이 0으로 수렴할 때 무한대로 발산하는 것을 막기 위함이다.
 
@@ -91,7 +91,9 @@ $\frac{\partial L}{\partial \hat{x_i}} = \frac{\partial L}{\partial y_i} \cdot \
 
 $\frac{\partial L}{\partial \sigma_B^2} = \sum_{i=1}^{m} \frac{\partial L}{\partial \hat{x_i}} \cdot (x_i - \mu_B) \cdot \frac{-1}{2}( \sigma_B^2 + \epsilon)^{-3/2}$
 
-$\frac{\partial L}{\partial \mu_B} = (\sum_{i=1}^{m} \frac{\partial L}{\partial \hat{x_i}} \cdot \frac{-1}{\sqrt{\sigma_B^2+\epsilon}}) + \frac{\partial L}{\partial \sigma_B^2} \cdot \frac{\sum_{i=1}^{m} -2(x_i - \mu_B)}{m}$
+$\frac{\partial L}{\partial \mu_B} = \big( \sum_{i=1}^{m} \frac{\partial L}{\partial \hat{x_i}} \cdot \frac{-1}{\sqrt{\sigma_B^2+\epsilon}} \big) + \frac{\partial L}{\partial \sigma_B^2} \cdot \frac{\sum_{i=1}^{m} -2(x_i - \mu_B)}{m}$
+
+
 
  
 
