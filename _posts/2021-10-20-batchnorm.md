@@ -95,6 +95,11 @@ $\frac{\partial L}{\partial \mu_B} = \bigg( \sum_{i=1}^{m} \frac{\partial L}{\pa
 
 $\frac{\partial L}{\partial x_i} = \frac{\partial L}{\partial \hat{x_i}} \cdot \frac{1}{\sqrt{\sigma_B^2+\epsilon}} + \frac{\partial L}{\partial \sigma_B^2} \cdot \frac{2(x_i - \mu_B)}{m} + \frac{\partial L}{\partial \mu_B} \cdot \frac{1}{m} $
 
+$\frac{\partial L}{\partial \gamma} = \sum_{i=1}^{m} \frac{\partial L}{\partial y_i} \cdot \hat{x_i}$
+
+$\frac{\partial L}{\partial \beta} = \sum_{i=1}^{m} \frac{\partial L}{\partial y_i}$
+
+
 
 
  
