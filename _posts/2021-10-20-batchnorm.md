@@ -76,12 +76,12 @@ Sigmoid 함수를 예로 들면 아래의 빨간 구역처럼 선형에 가까�
 
 ![](/assets/image/sigmoid_linear.png)
 
-이것을 벗어나기 위해 Scale과 Shift를 하는데, 이것을 담당하는 것이 Learnable Parameter, $\gamma, \; \beta$ 이다. 
+이것을 벗어나기 위해 Scale과 Shift를 하는데, 이것을 담당하는 것이 Learnable Parameter,  $\gamma, \; \beta$ 이다. 
 이것을 이용하면 최종적으로 배치 정규화 수식은 아래와 같다. 
 
 $y_i = \gamma \hat{x_i} + \beta$
 
-$\gamma$는 Scale을, $\beta$는 Shift를 해준다. 
+$\gamma$는 Scale을,  $\beta$는 Shift를 해준다. 
 이것이 논문에 나온 배치 정규화 방식이다. 
 
 
