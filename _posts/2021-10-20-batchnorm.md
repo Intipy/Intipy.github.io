@@ -53,6 +53,8 @@ Whitening의 과정으로, 데이터의 평균을 0으로 만든 후, 주성분 
 
 따라서 논문에서는 다음과 같은 정규화 방안을 제시한다.
 
+![](assets/image/bn.png)
+
 $\mu_{B} \leftarrow \frac{1}{m} \sum_{i=1}^{m} x_i$
 
 위 식은 m개의 미니 배치에 대하여 데이터의 평균을 구한 것이다. 
@@ -80,6 +82,9 @@ Sigmoid 함수를 예로 들면 아래의 빨간 구역처럼 선형에 가까�
 $y_i = \gamma \hat{x_i} + \beta$
 
 $\gamma$는 Scale을, $\beta$는 Shift를 해준다. 
+이것이 논문에 나온 배치 정규화 방식이다. 
+
+
 
 
 
