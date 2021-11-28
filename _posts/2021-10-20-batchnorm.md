@@ -57,13 +57,23 @@ $\mu_{B} \leftarrow \frac{1}{m} \sum_{i=1}^{m} x_i$
 
 위 식은 m개의 미니 배치에 대하여 데이터의 평균을 구한 것이다. 
 
-${\sigma_B}^2 \leftarrow \frac{1}{m} \sum_{i=1}^{m} (x_i-\mu_B)^2$
+$\sigma_B^2 \leftarrow \frac{1}{m} \sum_{i=1}^{m} (x_i-\mu_B)^2$
 
-${\sigma_B}^2$은 미니 배치에 대하여 구한 분산(variance)이다. 
+$\sigma_B^2$은 미니 배치에 대하여 구한 분산(variance)이다. 
 
 이제 아래와 같이 정규화를 할 수 있다. 
 
-$\hat{x_i} \leftarrow \frac{x_i-\mu_B}{\sqrt{\sigma_B^2}}$
+$\hat{x_i} \leftarrow \frac{x_i-\mu_B}{\sqrt{\sigma_B^2} + \epsilon}$
+
+이렇게 정규화를 했을 때 단점이 하나 있다. 
+우선, 정규화는 활성화 함수(Activation Function) 이전에 시행된다. 
+이렇게 정규화를 수행 했을 때 활성화 함수의 입력, 즉 정의역이 좁아지면서 비선형성(Non-Linearity)을 잃게 된다. 
+Sigmoid 함수를 예로 들면 아래의 빨간 구역처럼 선형에 가까운 함수가 나타난다. 
+
+![](assets/image/sigmoid_linear.png)
+
+이것을 벗어나기 위해 scale과 shift를 하는데, 이것을 담당하는 것이 Learnable Parameter, $\gamma, \; \beta$ 이다.
+
 
  
 
