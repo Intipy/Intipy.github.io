@@ -53,9 +53,19 @@ Whitening의 과정으로, 데이터의 평균을 0으로 만든 후, 주성분 
 
 따라서 논문에서는 다음과 같은 정규화 방안을 제시한다.
 
-$\mu_{\Beta} \leftarrow \frac{1}{m} \sum_{i=1}^{m} x_i$
+$\mu_{B} \leftarrow \frac{1}{m} \sum_{i=1}^{m} x_i$
 
-위 식은 m개의 미니배치에 대하여 데이터의 평균을 구한 것이다. 
+위 식은 m개의 미니 배치에 대하여 데이터의 평균을 구한 것이다. 
+
+${\sigma_B}^2 \leftarrow \frac{1}{m} \sum_{i=1}^{m} (x_i-\mu_B)^2$
+
+${\sigma_B}^2$은 미니 배치에 대하여 구한 분산(variance)이다. 
+
+이제 아래와 같이 정규화를 할 수 있다. 
+
+$\hat{x_i} \leftarrow \frac{x_i-\mu_B}{\sqrt{\sigma_B^2}}$
+
+ 
 
 
 
