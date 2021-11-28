@@ -91,6 +91,8 @@ $\frac{\partial L}{\partial \hat{x_i}} = \frac{\partial L}{\partial y_i} \cdot \
 
 $\frac{\partial L}{\partial \sigma_B^2} = \sum_{i=1}^{m} \frac{\partial L}{\partial \hat{x_i}} \cdot (x_i - \mu_B) \cdot \frac{-1}{2}( \sigma_B^2 + \epsilon)^{-3/2}$
 
+$\frac{\partial L}{\partial \mu_B} = (\sum_{i=1}^{m} \frac{\partial L}{\partial \hat{x_i}} \cdot \frac{-1}{\sqrt{\sigma_B^2+\epsilon}}) + \frac{\partial L}{\partial \sigma_B^2} \cdot \frac{\sum_{i=1}^{m} -2(x_i - \mu_B)}{m}$
+
  
 
 
