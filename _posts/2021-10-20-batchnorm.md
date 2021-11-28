@@ -87,9 +87,9 @@ $\gamma$는 Scale을,  $\beta$는 Shift를 해준다.
 그리고 $\gamma, \; \beta$는 앞서 말했듯이 Learnable Parameter, 즉 학습 가능한 매개 변수이므로 손실 함수에 대해 미분하여 경사하강을 진행해야 할 것이다.
 그 과정은 아래와 같이 나타낼 수 있다. 
 
-$\frac{\partial L}{\partial \hat{x_i}} = \frac{\partial L}{\partial y_i} \cdot \gammma$
+$\frac{\partial L}{\partial \hat{x_i}} = \frac{\partial L}{\partial y_i} \cdot \gamma$
 
-$\frac{\partial}{\partial \sigma_B^2} = \sum_{i=1}^{m} \frac{\partial L}{\partial \hat{x_i}} \cdot (x_i - \mu_B) \cdot \frac{-1}{2}( \sigma_B^2 + \epsilon)^{-\frac{2}{3}}$
+$\frac{\partial L}{\partial \sigma_B^2} = \sum_{i=1}^{m} \frac{\partial L}{\partial \hat{x_i}} \cdot (x_i - \mu_B) \cdot \frac{-1}{2}( \sigma_B^2 + \epsilon)^{-\frac{2}{3}}$
 
  
 
