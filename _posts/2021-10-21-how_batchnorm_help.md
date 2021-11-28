@@ -1,0 +1,29 @@
+---
+title:  "Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift"
+
+categories:
+
+  - Paper Review
+last_modified_at: 2021-10-12T08:06:00-05:00
+
+---
+
+
+
+해당 글은
+<br/>
+[How Does Batch Normalization Help Optimization](https://arxiv.org/abs/1805.11604) 
+<br/>
+라는 논문을 소개하는 글이다.
+<br/>
+<br/>
+<br/>
+<br/>
+**ABSTRACT**
+<br/>
+*"배치 정규화는 심층 신경망의 빠르고 안정적인 훈련을 가능케 만드는 널리 채택된 기술이다. 이런 확산에도 불구하고, 배치 정규화의 효과에 대한 정확한 이유는 여전히 잘 이해되지 않는다. 이러한 효과는 소위 "내부 공변량 이동"을 줄이기 위해 훈련 중에 층의 입력 분포의 변화를 제어하는 것에서 비롯된다는 것이 일반적인 견해이다. 이 연구에서 우리는 레이어의 입력 분포 안정성이 배치 정규화의 성공과 거의 관련이 없다는 것을 보여준다. 대신, 우리는 배치 정규화가 학습에 미치는 근본적인 영향을 파악한다. 최적화 환경을 훨씬 부드럽게 만든다는 것이다. 이러한 부드러움은 기울기의 보다 예측 가능하고 안정적인 동작을 유도하여 더 빠른 훈련을 가능하게 한다."* 
+<br/>
+<br/>
+<br/>
+<br/>
+
