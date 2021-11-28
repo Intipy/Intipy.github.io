@@ -89,7 +89,7 @@ $\gamma$는 Scale을,  $\beta$는 Shift를 해준다.
 
 $\frac{\partial L}{\partial \hat{x_i}} = \frac{\partial L}{\partial y_i} \cdot \gamma$
 
-$\frac{\partial L}{\partial \sigma_B^2} = \sum_{i=1}^{m} \frac{\partial L}{\partial \hat{x_i}} \cdot (x_i - \mu_B) \cdot \frac{-1}{2}( \sigma_B^2 + \epsilon)^{-\frac{2}{3}}$
+$\frac{\partial L}{\partial \sigma_B^2} = \sum_{i=1}^{m} \frac{\partial L}{\partial \hat{x_i}} \cdot (x_i - \mu_B) \cdot \frac{-1}{2}( \sigma_B^2 + \epsilon)^{-3/2}$
 
  
 
