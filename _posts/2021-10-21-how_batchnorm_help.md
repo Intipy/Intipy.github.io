@@ -1,5 +1,5 @@
 ---
-title:  "Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift"
+title:  "How Does Batch Normalization Help Optimization"
 
 categories:
 
