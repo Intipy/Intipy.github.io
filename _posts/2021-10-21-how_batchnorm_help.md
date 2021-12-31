@@ -69,7 +69,7 @@ $x^{(t)}, y^{(t)}$: 시간 t에서 네트워크를 훈련시키는 데 사용되
 
 시간 t에서 activation i의 ICS를 다음과 같이 정의한다. 
 
-$ICS \; = \; {\parallel G_{t, i} \; - \; {G \prime }_{t, i} \parallel}_2$
+$ICS \; = \; {\parallel G_{t, i} \; - \; G'_{t, i} \parallel}_2$
 
 G는 레이어의 기울기(Gradient)를 말하며, 위 식은 레이어의 학습 전과 후의 기울기 차이를 ICS로 정의하겠다는 것이다. 각 G는 아래처럼 나타낼 수 있다. 
 
