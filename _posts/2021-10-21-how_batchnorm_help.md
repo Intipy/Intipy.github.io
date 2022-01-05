@@ -127,15 +127,15 @@ Semi-Definite, PSD)이며, 이는 조각별 선형(Piecewise Linear, PL) 활성�
 
 지금까지의 이론적 분석은 정규화된 activation에 대한 손실의 최적화 환경을 연구했다. 이제 이러한 경계를 레이어 가중치와 관련하여 최악의 경우로 변환할 것이다. 
 
-**Theorem 4.4** 
+**Theorem 4.4** 가중치 공간에 대한 minimax bound
 
 $ g_j = \max\limits_{\parallel X \parallel \leq \lambda} {\parallel \nabla_W L \parallel}^2 , \; \; \; \hat{g_j} = \max\limits_{\parallel X \parallel \leq \lambda} {\parallel \nabla_W \hat{L} \parallel}^2 \Rightarrow \hat{g_j} \leq \frac{\gamma^2}{\sigma_j^2} \big( g_j^2 - m \mu_{g_j}^2 - \lambda^2 {\langle \nabla_{y_j} L, \hat{y_j} \rangle}^2 \big) \cdot$
 
 배치 정규화는 이상적인 환경 외에서도 많은 이점을 제공한다. 
 
-**Lemma 4.5**
+**Lemma 4.5** 배치 정규화는 매개변수 초기화에 이점을 제공한다. $W^{\star}$과 $\hat{W^{\star}}$를 각각 일반 및 배치 정규화 네트워크의 가중치에 대한 지역 최적값 집합이라고 하자. 모든 초기화 $W_0$에 대하여, 
 
-
+$$
 
 
 
