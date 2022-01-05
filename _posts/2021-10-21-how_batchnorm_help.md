@@ -108,7 +108,7 @@ ${\parallel \nabla_{y_j} \hat{L} \parallel}^2 \leq \frac{\gamma^2}{\sigma_j^2} \
 
 먼저, ${\langle 1,\nabla_{y_j} L \rangle}^2$는 차원 안에서 quadratically 하게 성장하므로 유의하다. 또한 변수에 대한 기울기가 변수 자체와 거의 상관관계가 없기 때문에 최종 내적 항 ${\langle \nabla_{y_j} L, \hat{y_j}\rangle}^2$은 0에서 멀리 떨어질 것으로 예상된다. 또한 $\sigma_j$는 커지는 경향이 있다. 따라서 $\frac{\gamma}{\sigma}$에 의한 scaling은 유효 Lipschitz 상수에서 볼 수 있는 상대적 "평탄도(Flatness)"에 기여할 수 있다. 우리는 이제 공간의 이차적 특성에 주목한다. 우리는 배치 정규화 레이어가 추가될 때, 기울기 방향의 activation에 관한 손실 헤시안(Hessian)의 2차 형태가 입력 분산에 의해 scale 되고(미니 배치 분산에 대한 복원력을 유도함) 추가 인자(Smoothness 증가)에 의해 감소함을 보여준다. 이 항은 현재 점 주위의 기울기 확장의 테일러 2차 항을 포착한다. 따라서, 이 항을 줄이면 첫 번째 순서 항(기울기)이 더 예측 가능하다는 것을 의미한다. 
 
-**Theorem 4.2** 배치 정규화가 Smoothness에 미치는 효과. $\hat{g_j} = \nabla_{y_j} L$, 그리고 $H_{jj} = \frac{\partial L}{\partial y_j \partial y_j}$ , 이 둘을 각자 기울기와 레이어 출력에 대한 손실의 헤시안이라고 하자. 
+**Theorem 4.2** 배치 정규화가 Smoothness에 미치는 효과. $\hat{g_j} = \nabla_{y_j} L$, 그리고 $H_{jj} = \frac{\partial L}{\partial y_j \partial y_j}$ , 이 둘을 레이어 출력에 대한 손실의 기울기와 헤시안이라고 하자.
 
 그렇다면,
 
@@ -117,6 +117,24 @@ $ {\big( \nabla_{y_j} \hat{L} \big)}^\top \frac{\partial \hat{L}}{\partial y_j \
 만약 $H_{jj}$가 $\hat{g_j}$와 $\nabla_{y_j} \hat{L}$의 relative norms를 보존한다면, 
 
 $ {\big( \nabla_{y_j} \hat{L} \big)}^\top \frac{\partial \hat{L}}{\partial y_j \partial y_j} \big( \nabla_{y_j} \hat{L} \big) \leq \frac{\gamma^2}{\sigma^2} {\bigg(  {\hat{g_j}}^\top H_{jj} \hat{g_j} - \frac{1}{m \gamma} \langle \hat{g_j} , \hat{y_j} \rangle  {\parallel \frac{\partial \hat{L}}{\partial y_j} \parallel}^2 \bigg)}$
+
+$\langle \hat{y_j} , \hat{g_j} \rangle $가 non-negative일 때, 위의 정리에서 더 예측 가능한 기울기를 가진다. 손실이 국소적으로 볼록한 경우 헤시안은 양의 반정의(Positive
+Semi-Definite, PSD)이며, 이는 조각별 선형(Piecewise Linear, PL) 활성화 함수와 최종 계층에서 볼록한 손실(표준 소프트맥스 교차 엔트로피 손실 또는 기타 등등)이다. 
+
+조건 $\langle \hat{y_j} , \hat{g_j} \rangle > 0$은 음의 기울기 $\hat{g_j}$가 손실의 최소를 가리키는 한 유지된다(정규화된 activation에 대하여). 전반적으로, 이 두 조건이 유지되는 한, 배치 정규화는 더 예측적이다(우리가 실험적으로 관찰한 것과 유사). 우리의 결과는 단순한 스케일링이 아닌 문제의 reparametrization에서 비롯된다는 점에 유의한다.
+
+**Observation 4.3** 배치 정규화는 scaling 이상의 기능을 수행한다. 모든 입력 데이터 $X$와 네트워크 구성 $W$에 대해 동일한 활성화 $y_j$를 초래하는 배치 정규화 구성$(W, \gamma, \beta)$이 존재한다. 따라서, 일반적인 공간의 모든 최소값이 배치 정규화 공간에서 보존된다. 즉, 최적화를 도우면서도 학습 성능에 악영향을 미치는 Smoothness의 개선은 일어나지 않는다. 
+
+지금까지의 이론적 분석은 정규화된 activation에 대한 손실의 최적화 환경을 연구했다. 이제 이러한 경계를 레이어 가중치와 관련하여 최악의 경우로 변환할 것이다. 
+
+**Theorem 4.4** 
+
+$ g_j = \max\limits_{\parallel X \parallel \leq \lambda} {\parallel \nabla_W L \parallel}^2 , \; \; \; \hat{g_j} = \max\limits_{\parallel X \parallel \leq \lambda} {\parallel \nabla_W \hat{L} \parallel}^2 \Rightarrow \hat{g_j} \leq \frac{\gamma^2}{\sigma_j^2} \big( g_j^2 - m \mu_{g_j}^2 - \lambda^2 {\langle \nabla_{y_j} L, \hat{y_j} \rangle}^2 \big) \cdot$
+
+배치 정규화는 이상적인 환경 외에서도 많은 이점을 제공한다. 
+
+**Lemma 4.5**
+
 
 
 
