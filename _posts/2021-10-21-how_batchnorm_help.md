@@ -75,7 +75,7 @@ G는 레이어의 기울기(Gradient)를 말하며, 위 식은 레이어의 학�
 
 $G_{t,i} = {\nabla}_{W_i^{(t)}} L \big( W_1^{(t)}, … , W_k^{(t)}; x^{(t)}, y^{(t)} \big)$
 
-$G'_{t,i} = {\nabla}_{W_i^{(t)}} L \big( W_1^{(t+1)}, … , W_{i-1}^{(t+1)}, W_i^{(t)}, W_{i+1}^{(t)}, ... , W_k^{(t)} ; x^{(t)}, y^{(t)} \big)$
+$G \prime_{t,i} = {\nabla}_{W_i^{(t)}} L \big( W_1^{(t+1)}, … , W_{i-1}^{(t+1)}, W_i^{(t)}, W_{i+1}^{(t)}, ... , W_k^{(t)} ; x^{(t)}, y^{(t)} \big)$
 
 
 ![](/assets/image/bn_ex4.png)
@@ -99,9 +99,9 @@ ICS가 학습에 도움을 주지 않을 뿐더러, 배치 정규화는 ICS를 �
 
 **이론적 결과**
 <br/>
-$activation y_i$에 대한 최적화 환경을 고려한다. 배치 정규화는 이미 최적화 환경에서 기울기의 예측 가능성과 Lipschitz 지속성에 유리한 성질을 유도하는 것을 보였다. 우리는 activation 최적화 환경이 weight 최적화 환경의 최악의 한계가 된다는 것을 보인다. 
+activation $y_i$에 대한 최적화 환경을 고려한다. 배치 정규화는 이미 최적화 환경에서 기울기의 예측 가능성과 Lipschitz 지속성에 유리한 성질을 유도하는 것을 보였다. 우리는 activation 최적화 환경이 weight 최적화 환경의 최악의 한계가 된다는 것을 보인다. 
 
-먼저 손실의 Lipschitzness를 나타내는 기울기 규모 $\parallel \nabla_{y_j} L \parallel$ 에 집중해보자. 손실의 Lipschitz 상수는 step이 지나갈 때마다 손실이 변경될 수 있는 양을 제어하기 때문에 최적화에 중요한 역할을 한다. 우리는 특정 가중치 또는 사용 중인 손실에 대한 어떠한 가정도 없이, 배치 정규화된 환경이 더 나은 Lipschitz 상수를 나타낸다는 것을 보여준다. 더 나아가, $activation \hat{y_j}$가 기울기 $\nabla_{\hat{y_j}} \hat{L}$와 상관관계가 있거나 기울기의 평균이 0에서 벗어날 때마다 Lipschitz 상수가 크게 감소한다. 이 감소는 부가적이며, 배치 정규화의 scaling이 원래 레이어의 scaling과 동일한 경우에도 효과가 있다는 점에 유의하라. (즉, $\sigma_j = \gamma$일 때도)
+먼저 손실의 Lipschitzness를 나타내는 기울기 규모 $\parallel \nabla_{y_j} L \parallel$ 에 집중해보자. 손실의 Lipschitz 상수는 step이 지나갈 때마다 손실이 변경될 수 있는 양을 제어하기 때문에 최적화에 중요한 역할을 한다. 우리는 특정 가중치 또는 사용 중인 손실에 대한 어떠한 가정도 없이, 배치 정규화된 환경이 더 나은 Lipschitz 상수를 나타낸다는 것을 보여준다. 더 나아가, activation $\hat{y_j}$가 기울기 $\nabla_{\hat{y_j}} \hat{L}$와 상관관계가 있거나 기울기의 평균이 0에서 벗어날 때마다 Lipschitz 상수가 크게 감소한다. 이 감소는 부가적이며, 배치 정규화의 scaling이 원래 레이어의 scaling과 동일한 경우에도 효과가 있다는 점에 유의하라. (즉, $\sigma_j = \gamma$일 때도)
 
 **Theorem 4.1** 배치 정규화가 Lipschitzness에 미치는 효과. 배치 정규화가 수행된 네트워크의 손실 $\hat{L}$과 표준 네트워크의 손실 $L$에 대하여. 
 ${\parallel \nabla_{y_j} \hat{L} \parallel}^2 \leq \frac{\gamma^2}{\sigma_j^2} \bigg( {\parallel \nabla_{y_j} L \parallel}^2 - \frac{1}{m}{\langle 1,\nabla_{y_j} L \rangle}^2 - \frac{1}{m} {\langle \nabla_{y_j} L, \hat{y_j}\rangle}^2 \bigg)$ 
