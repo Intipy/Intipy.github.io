@@ -99,7 +99,11 @@ ICS가 학습에 도움을 주지 않을 뿐더러, 배치 정규화는 ICS를 �
 우리는 이제 Fully-Connected Layer 뒤에 배치 정규화를 삽입 후, 최적화 공간을 이론적으로 살펴볼 것이다. 
 
 
-Theorem 4.1 ~~~~~ 
+**Theorem 4.1** 배치 정규화가 Lipschitzness에 미치는 효과. 배치 정규화가 수행된 네트워크의 손실 $\hat{L}$과 표준 네트워크의 손실 $L$에 대하여. 
+${\parallel \nabla_{y_j} \hat{L} \parallel}^2 \leq \frac{\gamma^2}{\sigma_j^2} \bigg( {\parallel \nabla_{y_j} L \parallel}^2 - \frac{1}{m}{\langle 1,\nabla_{y_j} L \rangle}^2 - \frac{1}{m} {\langle \nabla_{y_j} L, \hat{y_j}\rangle}^2 \bigg)$ 
+
+
+
 
 
 
