@@ -24,11 +24,11 @@ $y = f(g(x))$ 와 같은 합성함수가 있을 때, 그 도함수가 다음과 
 
 $y = f(u), \; u = g(x)$ 라고 하면
 
-$\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx}$
+$1. \; \; \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx}$
 
-$\frac{df(g(x))}{dx} = \frac{df(g(x))}{dg(x)} \cdot \frac{dg(x)}{dx}$
+$2. \; \; \frac{df(g(x))}{dx} = \frac{df(g(x))}{dg(x)} \cdot \frac{dg(x)}{dx}$
 
-$\{ f(g(x)) \}' = f'(g(x)) \cdot f(g'(x)) $
+$3. \; \; \{ f(g(x)) \}' = f'(g(x)) \cdot f(g'(x)) $
 
 <br/>
 <br/>
