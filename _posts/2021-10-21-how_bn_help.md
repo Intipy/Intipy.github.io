@@ -1,4 +1,6 @@
 ---
+published: true
+
 title:  "How Does Batch Normalization Help Optimization"
 
 categories:
