@@ -8,7 +8,7 @@ last_modified_at: 2021-10-12T08:06:00-05:00
 
 ---
 
-해당 글은 tt
+해당 글은 
 <br/>
 [How Does Batch Normalization Help Optimization](https://arxiv.org/abs/1805.11604) 
 <br/>
