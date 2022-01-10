@@ -2,9 +2,8 @@
 title:  "How Does Batch Normalization Help Optimization"
 
 categories:
-
   - Paper Review
-last_modified_at: 2021-10-12T08:06:00-05:00
+last_modified_at: 2021-10-13T08:06:00-05:00
 
 ---
 
@@ -76,7 +75,7 @@ G는 레이어의 기울기(Gradient)를 말하며, 위 식은 레이어의 학�
 
 ${G}_{t,i} = {\nabla}_{W_i^{(t)}} L \big( W_1^{(t)}, … , W_k^{(t)}; x^{(t)}, y^{(t)} \big)$
 
-${G}_{t,i} = {\nabla}_{W_i^{(t)}} L \big( W_1^{(t+1)}, … , W_{i-1}^{(t+1)}, W_i^{(t)}, W_{i+1}^{(t)}, ... , W_k^{(t)} ; x^{(t)}, y^{(t)} \big)$
+${G'}_{t,i} = {\nabla}_{W_i^{(t)}} L \big( W_1^{(t+1)}, … , W_{i-1}^{(t+1)}, W_i^{(t)}, W_{i+1}^{(t)}, ... , W_k^{(t)} ; x^{(t)}, y^{(t)} \big)$
 
 
 ![](/assets/image/bn_ex4.png)
