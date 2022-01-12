@@ -45,7 +45,7 @@ $$
 \begin{align}
 \tag{2}
 Error = - \sum^{N}_{i=1} t_i log_e y_i
-end{align} 
+\end{align} 
 $$
 
 교차 엔트로피 오차 또한 손실을 계산하는 

@@ -70,7 +70,7 @@ $$
 \begin{align} 
 \tag{1}
 x \; \colon= x - \alpha \frac{df(x)}{dx}
-\begin{align} 
+\end{align} 
 $$
 
 $\frac{df(x)}{dx}$는 기울기를 나타낸다.
