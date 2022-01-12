@@ -63,18 +63,12 @@ NIN에서 제안된 개념 중 하나로 MLP Convolution Layer 라는 것이 제
 CCCP(Cascaded Cross Channel Pooling)는 NIN에서 소개된 풀링 기법으로, 
 직렬적인 Channel의 묶음으로 픽셀 별 Pooling를 하는 것이다. 
 Feature Map의 크기를 유지하며 Channel 개수를 줄이는 차원 축소의 효과를 얻기 위함이다. 
-CCCP의 구조를 1×1 Filter Convolution으로 유사하게 표현 가능하기 때문에 이로서 차원축소를 GoogLeNet이 이용했다. 
-
-<br/>
-<br/>
-<br/>
-<br/>
+CCCP의 구조를 1×1 Filter Convolution으로 유사하게 표현 가능하기 때문에 이로서 차원축소를 GoogLeNet이 이용했다.
 
 이 신경망의 주요 아이디어는 Convolutional NN에서 Spase한, 밀집되지 않은 구조를 Dense, 밀집된 요소로서 근사하는 것이다. 
 그림으로 나타낸 GoogLeNet은 아래와 같다. 
 
 ![](/assets/image/googlenet_.jpg)
-
 
 ![](/assets/image/googlenet_info.png)
 
@@ -97,19 +91,3 @@ CCCP의 구조를 1×1 Filter Convolution으로 유사하게 표현 가능하기
 <br/>
 
 [구현 코드 GitHub](https://github.com/Intipy/GoogLeNet)
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
