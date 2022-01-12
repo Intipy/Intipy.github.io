@@ -136,102 +136,158 @@ $$
 
 활성화함수에 대한 대략적 설명이 끝났으니 이제 오차 역전파에 대해 제대로 알아보도록 하겠다.
 
-<br/>
-
 ![](/assets/image/1-1perceptron.png)
 
 위와 같은 아주 간단한, 1개의 퍼셉트론으로 이루어진 신경망을 생각해보자.
 이 신경망을 아래처럼 수식으로 나타낼 수 있다.
 
-<br/>
+$$
+\begin{align} 
+\tag{10}
+a = xw + b 
+\end{align}
+$$
 
-$a = xw + b $
+$$
+\begin{align} 
+\tag{11}
+y = \sigma (a)
+\end{align}
+$$
 
-$y = \sigma (a)$
+$$
+\begin{align} 
+\tag{12}
+E = \frac{1}{2} (y - t)^2
+\end{align}
+$$
 
-$Error = \frac{1}{2} (y - t)^2$
+손실함수는 평균 제곱 오차를 사용했으며 $y$는 신경망의 출력, $t$는 실제 정답이다.
 
-<br/>
-
-손실함수는 평균 제곱 오차를 사용했으며 y는 신경망의 출력, t는 실제 정답이다.
-<br/>
-<br/>
 우리가 가중치와 편향을 최적화시키기 위해 필요한 것(기울기)은
 
-$\frac{\partial Error}{\partial w}$ 
+$$
+\begin{align} 
+\tag{13}
+G_w = \frac{\partial Error}{\partial w}
+\end{align}
+$$
 
-$\frac{\partial Error}{\partial b}$
+$$
+\begin{align} 
+\tag{14}
+G_b = \frac{\partial Error}{\partial b}
+\end{align}
+$$
 
-위 2개이다.
-저 2개를 알아내면 옵티마이저를 통해 가중치를 업데이트할 수 있다.
-<br/>
-<br/>
+위 (13), (14)이다. 이 2개를 알아내면 옵티마이저를 통해 가중치와 편향을 업데이트할 수 있다.
+
 우선 신경망이라는 복잡한 함수를 미분하기 위해 이것을 분해하겠다.
-각 층을 미분하기 위해 층마다 분해하면 다음처럼 된다.
+각 층을 미분하기 위해 층마다 분해하면 (15), (16)과 같다.
 
-$\frac{\partial Error}{\partial w} = \frac{\partial Error}{\partial y} \cdot \frac{\partial y}{\partial a} \cdot \frac{\partial a}{\partial w}$
+$$
+\begin{align} 
+\tag{15}
+\frac{\partial Error}{\partial w} = \frac{\partial Error}{\partial y} \cdot \frac{\partial y}{\partial a} \cdot \frac{\partial a}{\partial w}
+\end{align}
+$$
 
-$\frac{\partial Error}{\partial b} = \frac{\partial Error}{\partial y} \cdot \frac{\partial y}{\partial a} \cdot \frac{\partial a}{\partial b}$
-
-<br/>
+$$
+\begin{align} 
+\tag{16}
+\frac{\partial Error}{\partial b} = \frac{\partial Error}{\partial y} \cdot \frac{\partial y}{\partial a} \cdot \frac{\partial a}{\partial b}
+\end{align}
+$$
 
 연쇄법칙에 근거해서 뒤에서부터 구해보겠다. (여기서 뒤라는 것은 신경망의 연산 순서의 반대)
 
-$\frac{\partial Error}{\partial y} = \frac{\partial \frac{1}{2} (y-t)^2}{\partial y} = y - t$
+$$
+\begin{align} 
+\tag{17}
+\frac{\partial Error}{\partial y} = \frac{\partial \frac{1}{2} (y-t)^2}{\partial y} = y - t
+\end{align}
+$$
 
-위 식처럼 손실을 출력에 대해 편미분하면 $y-t$이다.
+$$
+\begin{align} 
+\tag{18}
+\frac{\partial y}{\partial a} = \frac{\partial \sigma(a)}{\partial a} = \sigma'(a)
+\end{align}
+$$
 
-<br/>
+$$
+\begin{align} 
+\tag{19}
+\frac{\partial a}{\partial w} = \frac{\partial xw + b}{\partial w} = x
+\end{align}
+$$
 
-$\frac{\partial y}{\partial a} = \frac{\partial \sigma(a)}{\partial a} = \sigma'(a)$
+$$
+\begin{align} 
+\tag{20}
+\frac{\partial a}{\partial b} = \frac{\partial xw + b}{\partial b} = 1
+\end{align}
+$$
 
-그리고 출력 y를 a에 대해 편미분하면 활성화함수의 도함수가 나온다.
+(17): 손실을 출력에 대해 편미분하면 $y-t$가 된다.
+(18): 출력 $y$를 $a$에 대해 편미분하면 활성화함수의 도함수가 된다. 
+(19): a에 대하여 가중치 w로 편미분하면 x가 된다.
+(20): a에 대하여 편향 b로 편미분하면 1이 된다.
 
-<br/>
+이제 연쇄법칙을 이용해 $G_w$(equation 13)과 $G_b$(equation 14)를 분해하면 (21), (22)와 같은 값을 얻는다.
 
-$\frac{\partial a}{\partial w} = \frac{\partial xw + b}{\partial w} = x$
+$$
+\begin{align} 
+\tag{21}
+\frac{\partial Error}{\partial w} &= \frac{\partial Error}{\partial y} \cdot \frac{\partial y}{\partial a} \cdot \frac{\partial a}{\partial w} \\
+                                  &= (y-t)\sigma'(a)x
+\end{align}
+$$
 
-a에 대하여 가중치 w로 편미분하면 x가 된다.
+$$
+\begin{align} 
+\tag{22}
+\frac{\partial Error}{\partial b} &= \frac{\partial Error}{\partial y} \cdot \frac{\partial y}{\partial a} \cdot \frac{\partial a}{\partial b} \\ 
+                                  &= (y-t)\sigma'(a)
+\end{align}
+$$
 
-<br/>
+나중에 또 자세히 다룰 것이지만 미리 말하자면 (23)처럼 시그모이드 함수를 미분할 수 있다.
 
-$\frac{\partial a}{\partial b} = \frac{\partial xw + b}{\partial b} = 1$
+$$
+\begin{align} 
+\tag{23}
+\frac{\partial y}{\partial a} &= \frac{\partial \sigma(a)}{\partial a} \\ 
+                              &= \sigma(a)(1-\sigma(a)) \\ 
+                              &= y(1-y)
+\end{align}
+$$
 
-a에 대하여 편향 b로 편미분하면 1이 된다.
+미분 과정은 나중에 자세히 설명하도록 하겠다.
 
-<br/>
-
-이제 연쇄법칙을 이용해 $\frac{\partial Error}{\partial w}$ 와 $\frac{\partial Error}{\partial b}$를 분해하면
-
-$\frac{\partial Error}{\partial w} = \frac{\partial Error}{\partial y} \cdot \frac{\partial y}{\partial a} \cdot \frac{\partial a}{\partial w} = (y-t)\sigma'(a)x$
-
-$\frac{\partial Error}{\partial b} = \frac{\partial Error}{\partial y} \cdot \frac{\partial y}{\partial a} \cdot \frac{\partial a}{\partial b} = (y-t)\sigma'(a)$
-
-위 식처럼 기울기를 구할 수 있다.
-나중에 또 자세히 다룰 것이지만 미리 말하자면 
-
-$\frac{\partial y}{\partial a}= \frac{\partial \sigma(a)}{\partial a} = \sigma(a)(1-\sigma(a)) = y(1-y)$
-
-위처럼 시그모이드 함수를 미분할 수 있다.
-미분 과정은 나중에 자세히 다룰 때 같이 설명하도록 하겠다.
-<br/>
-<br/>
 기울기를 구했으면 이제 옵티마이저를 통해 업데이트 해주기만 하면 된다.
 가장 간단한 SGD를 사용하여 업데이트를 하면 아래와 같다.
 
-$w \; \colon= w - \alpha \frac{\partial Error}{\partial w}$
+$$
+\begin{align} 
+\tag{24}
+w \; \colon= w - \alpha \frac{\partial Error}{\partial w}
+\end{align}
+$$
 
-$b \; \colon= b - \alpha \frac{\partial Error}{\partial b}$
-
-<br/>
+$$
+\begin{align} 
+\tag{25}
+b \; \colon= b - \alpha \frac{\partial Error}{\partial b}
+\end{align}
+$$
 
 신경망의 층이 이게 전부라면 여기서 끝내도 된다.
 하지만 신경망은 층을 깊게 쌓는 경우가 많으므로 가중치와 편향만 업데이트 하고 끝내면 안된다.
 일단 하나의 층에 대해서 어떻게 역전파가 되는지 생각해보자.
 손실함수는 출력층에만 있으므로 논외로 하고, 
-해당 층의 출력 y에서부터 미분을 시작해서 전파한다.
-<br/>
-<br/>
+해당 층의 출력 $y$에서부터 미분을 시작해서 전파한다.
+
 신경망은 1층-2층-3층... 이런 구조로 되어있고 인접한 층의 뉴런들은 서로 연결되어있기 때문에 다음 층으로 전파(신경망의 연산 방향으로의 전파이며 역전파와 달리 순전파라고 한다.)가 된다.
 즉, 1층의 출력은 2층의 입력과 연결되어 있으며, 2층의 출력은 3층의 입력과 연결되어있다.
 따라서 우리는 입력에 대해서도 미분을 해주어야한다.
@@ -239,11 +295,20 @@ $b \; \colon= b - \alpha \frac{\partial Error}{\partial b}$
 
 그렇기에 우리는 $\frac{\partial Error}{\partial x}$를 구해주어야 한다.
 
-$\frac{\partial a}{\partial x} = \frac{\partial xw + b}{\partial x} = w$
+$$
+\begin{align} 
+\tag{26}
+\frac{\partial a}{\partial x} = \frac{\partial xw + b}{\partial x} = w
+\end{align}
+$$
 
-따라서
-
-$\frac{\partial Error}{\partial x} = \frac{\partial Error}{\partial y} \cdot \frac{\partial y}{\partial a} \cdot \frac{\partial a}{\partial x} = (y-t)\sigma'(a)w$
+$$
+\begin{align} 
+\tag{27}
+\therefore \frac{\partial Error}{\partial x} &= \frac{\partial Error}{\partial y} \cdot \frac{\partial y}{\partial a} \cdot \frac{\partial a}{\partial x} \\ &
+                                            &= (y-t)\sigma'(a)w
+\end{align}
+$$
 
 이렇게 입력에 대해 미분을 했다면 이전 층으로 역전파가 된다. 
 이전 층의 입장에서는 출력의 미분부터 역전파가 다시 시작되는 것이다.
