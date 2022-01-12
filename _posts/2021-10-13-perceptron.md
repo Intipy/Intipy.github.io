@@ -39,7 +39,7 @@ $$
 
 $$
 \begin{align}
-tag{2}
+\tag{2}
 
 y = \begin{cases} 
       0\;(x_1w_1+x_2w_2+b \leq 0) \\
