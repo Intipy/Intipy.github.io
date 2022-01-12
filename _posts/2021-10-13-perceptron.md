@@ -16,7 +16,17 @@ last_modified_at: 2021-10-12T08:06:00-05:00
 입력과 출력 모두 여러개가 있을 수 있다.
 출력값 y는 다음과 같다.
 
-$$y=\begin{cases} 0\;(x_1w_1+x_2w_2 \leq \theta)  \\1\;(x_1w_1+x_2w_2>\theta) \end{cases}$$
+$$
+\begin{align} 
+\tag{1}
+
+y = \begin{cases} 
+      0\;(x_1w_1+x_2w_2 \leq \theta) \\ 
+      1\;(x_1w_1+x_2w_2>\theta) 
+    \end{cases}
+
+\end{align}
+$$
 
 입력이 각 선을 지나면서 w와 곱해진다.
 그렇게 곱한 후 모두 더한 것인데, 임계값 $\theta$를 넘느냐에 따라 1 또는 0을 가진다. 
