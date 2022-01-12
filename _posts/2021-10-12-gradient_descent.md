@@ -66,7 +66,12 @@ $x$가 좌측으로 이동함으로서 함수값은
 이렇게 경사하강의 의미에 대한 설명은 끝났다.
 이제 이것을 수학적으로 표현할 수 있다.
 
-$x \; \colon= x - \alpha \frac{df(x)}{dx}$
+$$
+\begin{align} 
+\tag{1}
+x \; \colon= x - \alpha \frac{df(x)}{dx}
+\begin{align} 
+$$
 
 $\frac{df(x)}{dx}$는 기울기를 나타낸다.
 이것에 앞서 말한 아주 작은 값, 
