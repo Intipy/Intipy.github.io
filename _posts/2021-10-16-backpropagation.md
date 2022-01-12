@@ -124,6 +124,7 @@ $$
 또한 $step(x)$를 아래처럼 그릴 수 있다.
 
 ![](/assets/image/step_function.png)
+Figure 2: 계단함수
 
 이제 활성화함수라는 개념을 적용해서 AND 게이트의 신경망을 다시 표현하면 아래로 바뀐다.
 
@@ -137,6 +138,7 @@ $$
 활성화함수에 대한 대략적 설명이 끝났으니 이제 오차 역전파에 대해 제대로 알아보도록 하겠다.
 
 ![](/assets/image/1-1perceptron.png)
+Figure 3: 퍼셉트론 1개로 이루어진 신경망. 가중치, 편향, 입력, 출력 등의 모든 매개변수를 각각 하나씩만 가진다. 
 
 위와 같은 아주 간단한, 1개의 퍼셉트론으로 이루어진 신경망을 생각해보자.
 이 신경망을 아래처럼 수식으로 나타낼 수 있다.
@@ -305,7 +307,7 @@ $$
 $$
 \begin{align} 
 \tag{27}
-\therefore \frac{\partial Error}{\partial x} &= \frac{\partial Error}{\partial y} \cdot \frac{\partial y}{\partial a} \cdot \frac{\partial a}{\partial x} \\ &
+\therefore \frac{\partial Error}{\partial x} &= \frac{\partial Error}{\partial y} \cdot \frac{\partial y}{\partial a} \cdot \frac{\partial a}{\partial x} \\ 
                                             &= (y-t)\sigma'(a)w
 \end{align}
 $$
