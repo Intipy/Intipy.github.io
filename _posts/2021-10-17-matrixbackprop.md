@@ -123,6 +123,7 @@ $$
 $$
 
 $$
+\setstretch{2}
 \begin{align} 
 \tag{10}
 \frac{\partial Z_2}{\partial A_2} &= \frac{\partial \sigma(A_2)}{\partial A_2} \\ 
