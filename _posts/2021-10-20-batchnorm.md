@@ -5,11 +5,7 @@ categories:
 
   - Paper Review
 last_modified_at: 2021-10-12T08:06:00-05:00
-
 ---
-
-
-
 
 해당 글은
 <br/>
@@ -56,17 +52,32 @@ Whitening의 과정으로, 데이터의 평균을 0으로 만든 후, 주성분 
 
 ![](/assets/image/bn.png)
 
-$\mu_{B} \leftarrow \frac{1}{m} \sum_{i=1}^{m} x_i$
+$$
+\begin{align} 
+\tag{1}
+\mu_{B} \leftarrow \frac{1}{m} \sum_{i=1}^{m} x_i
+\end{align}
+$$
 
-위 식은 m개의 미니 배치에 대하여 데이터의 평균을 구한 것이다. 
+$$
+\begin{align} 
+\tag{2}
+\sigma_B^2 \leftarrow \frac{1}{m} \sum_{i=1}^{m} (x_i-\mu_B)^2
+\end{align}
+$$
 
-$\sigma_B^2 \leftarrow \frac{1}{m} \sum_{i=1}^{m} (x_i-\mu_B)^2$
+(1)은 m개의 미니 배치에 대하여 데이터의 평균을 구한 것이다. 
+<br/>
+(2)에서 $\sigma_B^2$은 미니 배치에 대하여 구한 분산(variance)이다. 
 
-$\sigma_B^2$은 미니 배치에 대하여 구한 분산(variance)이다. 
+이제 아래 (3)과 같이 정규화를 할 수 있다. 
 
-이제 아래와 같이 정규화를 할 수 있다. 
-
-$\hat{x_i} \leftarrow \frac{x_i-\mu_B}{\sqrt{\sigma_B^2+\epsilon}}$
+$$
+\begin{align} 
+\tag{3}
+\hat{x_i} \leftarrow \frac{x_i-\mu_B}{\sqrt{\sigma_B^2+\epsilon}}
+\end{align}
+$$
 
 엡실론을 더해준 것은 분산이 0으로 수렴할 때 무한대로 발산하는 것을 막기 위함이다.
 
@@ -80,7 +91,12 @@ Sigmoid 함수를 예로 들면 아래의 빨간 구역처럼 선형에 가까�
 이것을 벗어나기 위해 Scale과 Shift를 하는데, 이것을 담당하는 것이 Learnable Parameter,  $\gamma, \; \beta$ 이다. 
 이것을 이용하면 최종적으로 배치 정규화 수식은 아래와 같다. 
 
-$y_i = \gamma \hat{x_i} + \beta$
+$$
+\begin{align} 
+\tag{4}
+y_i = \gamma \hat{x_i} + \beta
+\end{align}
+$$
 
 $\gamma$는 Scale을,  $\beta$는 Shift를 해준다. 
 이것이 논문에 나온 배치 정규화 방식이다. 
@@ -88,17 +104,47 @@ $\gamma$는 Scale을,  $\beta$는 Shift를 해준다.
 그리고 $\gamma, \; \beta$는 앞서 말했듯이 Learnable Parameter, 즉 학습 가능한 매개 변수이므로 손실 함수에 대해 미분하여 경사하강을 진행해야 할 것이다.
 그 과정은 아래와 같이 나타낼 수 있다. 
 
-$\frac{\partial L}{\partial \hat{x_i}} = \frac{\partial L}{\partial y_i} \cdot \gamma$
+$$
+\begin{align} 
+\tag{5}
+\frac{\partial L}{\partial \hat{x_i}} = \frac{\partial L}{\partial y_i} \cdot \gamma
+\end{align}
+$$
 
-$\frac{\partial L}{\partial \sigma_B^2} = \sum_{i=1}^{m} \frac{\partial L}{\partial \hat{x_i}} \cdot (x_i - \mu_B) \cdot \frac{-1}{2}( \sigma_B^2 + \epsilon)^{-3/2}$
+$$
+\begin{align} 
+\tag{6}
+\frac{\partial L}{\partial \sigma_B^2} = \sum_{i=1}^{m} \frac{\partial L}{\partial \hat{x_i}} \cdot (x_i - \mu_B) \cdot \frac{-1}{2}( \sigma_B^2 + \epsilon)^{-3/2}
+\end{align}
+$$
 
-$\frac{\partial L}{\partial \mu_B} = \bigg( \sum_{i=1}^{m} \frac{\partial L}{\partial \hat{x_i}} \cdot \frac{-1}{\sqrt{\sigma_B^2+\epsilon}} \bigg) + \frac{\partial L}{\partial \sigma_B^2} \cdot \frac{\sum_{i=1}^{m} -2(x_i - \mu_B)}{m}$
+$$
+\begin{align} 
+\tag{7}
+\frac{\partial L}{\partial \mu_B} = \bigg( \sum_{i=1}^{m} \frac{\partial L}{\partial \hat{x_i}} \cdot \frac{-1}{\sqrt{\sigma_B^2+\epsilon}} \bigg) + \frac{\partial L}{\partial \sigma_B^2} \cdot \frac{\sum_{i=1}^{m} -2(x_i - \mu_B)}{m}
+\end{align}
+$$
 
-$\frac{\partial L}{\partial x_i} = \frac{\partial L}{\partial \hat{x_i}} \cdot \frac{1}{\sqrt{\sigma_B^2+\epsilon}} + \frac{\partial L}{\partial \sigma_B^2} \cdot \frac{2(x_i - \mu_B)}{m} + \frac{\partial L}{\partial \mu_B} \cdot \frac{1}{m} $
+$$
+\begin{align} 
+\tag{8}
+\frac{\partial L}{\partial x_i} = \frac{\partial L}{\partial \hat{x_i}} \cdot \frac{1}{\sqrt{\sigma_B^2+\epsilon}} + \frac{\partial L}{\partial \sigma_B^2} \cdot \frac{2(x_i - \mu_B)}{m} + \frac{\partial L}{\partial \mu_B} \cdot \frac{1}{m} 
+\end{align}
+$$
 
-$\frac{\partial L}{\partial \gamma} = \sum_{i=1}^{m} \frac{\partial L}{\partial y_i} \cdot \hat{x_i}$
+$$
+\begin{align} 
+\tag{9}
+\frac{\partial L}{\partial \gamma} = \sum_{i=1}^{m} \frac{\partial L}{\partial y_i} \cdot \hat{x_i}
+\end{align}
+$$
 
-$\frac{\partial L}{\partial \beta} = \sum_{i=1}^{m} \frac{\partial L}{\partial y_i}$
+$$
+\begin{align} 
+\tag{10}
+\frac{\partial L}{\partial \beta} = \sum_{i=1}^{m} \frac{\partial L}{\partial y_i}
+\end{align}
+$$
 
 
 

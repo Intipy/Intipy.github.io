@@ -51,7 +51,7 @@ $$
 
 각 행렬의 형상은 이전 글에서 설명한 행렬 표현의 특징에 따라 아래처럼 결정된다.
 
-### Define 1
+**Define 1**
 <br/>
 $X: 1 \times 10,$
 <br/>
@@ -61,10 +61,12 @@ $B_1: 1 \times 15$
 <br/>
 $A_1: 1 \times 15$
 
-### Define 2
+**Define 2**
+<br/>
 $Z_1: 1 \times 15$
 
-### Define 3
+**Define 3**
+<br/>
 $W_2: 15 \times 5$
 <br/>
 $B_2: 1 \times 5$
@@ -123,7 +125,6 @@ $$
 $$
 
 $$
-\setstretch{2}
 \begin{align} 
 \tag{10}
 \frac{\partial Z_2}{\partial A_2} &= \frac{\partial \sigma(A_2)}{\partial A_2} \\ 
