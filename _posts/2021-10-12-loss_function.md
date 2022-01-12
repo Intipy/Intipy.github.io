@@ -28,6 +28,7 @@ last_modified_at: 2021-10-12T08:06:00-05:00
 $$
 \begin{align} 
 Error = \frac{1}{2} \sum^{N}_{i=1} (y_i - t_i)^2
+\label{eq:label}
 \end{align}
 $$
 
