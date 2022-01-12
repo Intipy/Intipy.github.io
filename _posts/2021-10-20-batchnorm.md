@@ -43,6 +43,7 @@ Whitening의 과정으로, 데이터의 평균을 0으로 만든 후, 주성분 
 그리고 최종적으로 분산이 1이 되도록 하는데, 이렇게 데이터가 같은 scale을 가질 수 있도록 한다.
 
 ![](/assets/image/whitening.png)
+Figure 1: Whitening 기법
    
 이러한 Whitening을 각 레이어에 적용하면 ICS를 감소시킬 수 있다고 말한다. 
 하지만 문제가 몇가지 있는데, 해당 전처리 과정에서는 공분산 행렬의 계산을 비롯해 굉장히 큰 계산 비용이 든다. 
@@ -51,6 +52,7 @@ Whitening의 과정으로, 데이터의 평균을 0으로 만든 후, 주성분 
 따라서 논문에서는 다음과 같은 정규화 방안을 제시한다.
 
 ![](/assets/image/bn.png)
+Figure 2: 배치 정규화 과정
 
 $$
 \begin{align} 
@@ -87,6 +89,7 @@ $$
 Sigmoid 함수를 예로 들면 아래의 빨간 구역처럼 선형에 가까운 함수가 나타난다. 
 
 ![](/assets/image/sigmoid_linear.png)
+Figure 3: 시그모이드 함수에서 위 빨간 영역은 거의 선형에 가까움
 
 이것을 벗어나기 위해 Scale과 Shift를 하는데, 이것을 담당하는 것이 Learnable Parameter,  $\gamma, \; \beta$ 이다. 
 이것을 이용하면 최종적으로 배치 정규화 수식은 아래와 같다. 

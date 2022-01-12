@@ -42,6 +42,7 @@ NIN에서 제안된 개념 중 하나로 MLP Convolution Layer 라는 것이 제
 아래 그림을 통해 설명하겠다. 
 
 ![](/assets/image/mlp_conv_layer.jpg)
+Figure 1: Colvolution Layer & Multi Layer Perceptron Convolution Layer
 
 왼쪽은 일반적인 Convolution Layer이다. 
 합성곱 연산을 통해 바로 Feature Map을 출력하는 구조이다. 
@@ -51,6 +52,7 @@ NIN에서 제안된 개념 중 하나로 MLP Convolution Layer 라는 것이 제
 이는 일반적인 Convolution에 비하여 비선형성(Non-Linearity)을 더 추가하기 위함이다. 
 
 ![](/assets/image/inception_module.jpg)
+Figure 2: Inception module
 
 (a)는 일반적인 모듈, (b)는 Dimension Reductions(차원 축소)가 된 모듈이다.
 (b)에서 1×1 Filter Convolution 층이 있는 걸 볼 수 있는데, 
@@ -59,6 +61,7 @@ NIN에서 제안된 개념 중 하나로 MLP Convolution Layer 라는 것이 제
 1×1 Filter Convolution의 의미를 알아보기 위해 CCCP(Cascaded Cross Channel Pooling)를 알아보겠다. 
 
 ![](/assets/image/cross_channel.jpg)
+Figure 3: Cross channel pooling 
 
 CCCP(Cascaded Cross Channel Pooling)는 NIN에서 소개된 풀링 기법으로, 
 직렬적인 Channel의 묶음으로 픽셀 별 Pooling를 하는 것이다. 
@@ -69,8 +72,10 @@ CCCP의 구조를 1×1 Filter Convolution으로 유사하게 표현 가능하기
 그림으로 나타낸 GoogLeNet은 아래와 같다. 
 
 ![](/assets/image/googlenet_.jpg)
+Figure 4: GoogLeNet 
 
 ![](/assets/image/googlenet_info.png)
+Figure 5: Information of GoogLeNet
 
 보는 것처럼 모델이 매우 깊다. 
 따라서 기울기 소실(Gradient Vanishing) 문제가 발생할 수 있기 때문에 Auxiliary Classifier를 중간 layer에 추가하였다. 
