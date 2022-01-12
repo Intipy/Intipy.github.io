@@ -96,15 +96,15 @@ i) 입력이 0, 0 일 때,
 $0\times0.4 + 0\times0.3 - 0.6 = 0\;(\because -0.6 \leq 0)$
 
 
-ii) 입력이 1, 0 일 때는
+ii) 입력이 1, 0 일 때,
 <br/>
 $1\times0.4 + 0\times0.3 - 0.6 = 0\;(\because -0.2 \leq 0)$
 
-iii) 입력이 0, 1 일 때는
+iii) 입력이 0, 1 일 때,
 <br/>
 $0\times0.4 + 1\times0.3 - 0.6 = 0\;(\because -0.3 \leq 0)$
 
-iiii) 입력이 1, 1 일 때는
+iiii) 입력이 1, 1 일 때,
 <br/>
 $1\times0.4 + 1\times0.3 - 0.6 = 1\;(\because 0.1 > 0)$
 
