@@ -1,5 +1,5 @@
 ---
-title:  "합성곱(Convolution)의 미분"
+title:  "합성곱(Convolution) 신경망의 역전파"
 
 categories:
 
